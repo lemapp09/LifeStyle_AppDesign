@@ -1,0 +1,152 @@
+VisualElement {
+}
+
+.background {
+    flex-grow: 1;
+}
+
+.ScreenTemplate {
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.back-button {
+    position: absolute;
+    top: auto;
+    left: auto;
+    padding: 4px 8px;
+    background-color: rgba(51, 51, 51, 0);
+    color: white;
+    border-radius: 4px;
+    background-image: url("project://database/Assets/Art/App%20Design/BackButton.png?fileID=2800000&guid=d16d9c00ad7f343519396b0ba2a77e03&type=3#BackButton");
+    width: 225px;
+    height: 225px;
+    min-width: 225px;
+    -unity-background-scale-mode: scale-to-fit;
+    min-height: 225px;
+    -unity-background-image-tint-color: rgb(248, 248, 248);
+    bottom: 24px;
+    right: 25px;
+}
+
+.back-button:hover {
+    -unity-background-image-tint-color: rgb(128, 128, 128);
+    scale: 1.05;
+}
+
+.MainScreen {
+    background-image: url("project://database/Assets/Art/App%20Design/Background.png?fileID=2800000&guid=47eb195e0c6e840598a937409b4ef3e8&type=3#Background");
+}
+
+.TopClearRow {
+    flex-grow: 1;
+    height: 5%;
+    max-height: 5%;
+    min-height: 5%;
+}
+
+.FirstRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.FirstLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem01.png?fileID=2800000&guid=ead3196e39aac466eb0acb74d023bcaa&type=3#AppItem01");
+}
+
+.FirstCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem02.png?fileID=2800000&guid=66fa0f394c0b6404ea6fa2769a4cc941&type=3#AppItem02");
+}
+
+.FirstRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem03.png?fileID=2800000&guid=e92858adc76ea470f9cd95f1af484a25&type=3#AppItem03");
+}
+
+.SecondRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.SecondLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem04.png?fileID=2800000&guid=b4656c7ba215f40c89d1f919ba25a567&type=3#AppItem04");
+}
+
+.SecondCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem05.png?fileID=2800000&guid=cc4ffee9950a44b7eb701890f8f57b35&type=3#AppItem05");
+}
+
+.SecondRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem06.png?fileID=2800000&guid=ed94978436e5047609e945257a7896b7&type=3#AppItem06");
+}
+
+.ThirdRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.ThirdLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem07.png?fileID=2800000&guid=23cb569d7e6524d949ddf2ed10433644&type=3#AppItem07");
+}
+
+.ThirdCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem08.png?fileID=2800000&guid=49464e8fc382e42dfa2784ef07723f5f&type=3#AppItem08");
+}
+
+.ThirdRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem09.png?fileID=2800000&guid=5e8141a63afe14a7fb3523380d2eaa46&type=3#AppItem09");
+}
+
+.FourthRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.FourthLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem10.png?fileID=2800000&guid=4b5648eee82574019a44ed4efa87ab48&type=3#AppItem10");
+}
+
+.FourthCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem11.png?fileID=2800000&guid=43f1d882ab30f48a5bc5007905848b27&type=3#AppItem11");
+}
+
+.FourthRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem12.png?fileID=2800000&guid=281c6671d6cb84353a6f6ce2a2b4f808&type=3#AppItem12");
+}
+
+.BottomRow {
+    flex-grow: 1;
+    height: 20%;
+}
+
+.appElement {
+    flex-grow: 1;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding-top: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.appElement:hover {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.6);
+    scale: 1.05;
+}
+
+.Screen01 {
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("project://database/Assets/Art/App%20Design/Background.png?fileID=2800000&guid=47eb195e0c6e840598a937409b4ef3e8&type=3#Background");
+}

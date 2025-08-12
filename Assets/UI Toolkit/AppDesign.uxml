@@ -1,0 +1,95 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3#AppDesign" />
+    <ui:VisualElement name="Background" class="background">
+        <ui:VisualElement name="MainScreen" class="MainScreen ScreenTemplate">
+            <ui:VisualElement name="TopClearRow" class="TopClearRow" />
+            <ui:VisualElement name="FirstRow" class="FirstRow">
+                <ui:VisualElement name="FirstLeftElement" class="FirstLeftElement appElement" />
+                <ui:VisualElement name="FirstCenterElement" class="FirstCenterElement appElement" />
+                <ui:VisualElement name="FirstRightElement" class="FirstRightElement appElement" />
+            </ui:VisualElement>
+            <ui:VisualElement name="SecondRow" class="SecondRow">
+                <ui:VisualElement name="SecondLeftElement" class="SecondLeftElement appElement" />
+                <ui:VisualElement name="SecondCenterElement" class="SecondCenterElement appElement" />
+                <ui:VisualElement name="SecondRightElement" class="SecondRightElement appElement" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ThirdRow" class="ThirdRow">
+                <ui:VisualElement name="ThirdLeftElement" class="ThirdLeftElement appElement" />
+                <ui:VisualElement name="ThirdCenterElement" class="ThirdCenterElement appElement" />
+                <ui:VisualElement name="ThirdRightElement" class="ThirdRightElement appElement" />
+            </ui:VisualElement>
+            <ui:VisualElement name="FourthRow" class="FourthRow">
+                <ui:VisualElement name="FourthLeftElement" class="FourthLeftElement appElement" />
+                <ui:VisualElement name="FourthCenterElement" class="FourthCenterElement appElement" />
+                <ui:VisualElement name="FourthRightElement" class="FourthRightElement appElement" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BottomRow" class="BottomRow">
+                <ui:VisualElement name="LeftElement" style="flex-grow: 1;" />
+                <ui:VisualElement name="CenterElement" style="flex-grow: 1;" />
+                <ui:VisualElement name="RightElement" style="flex-grow: 1;" />
+                <ui:VisualElement style="flex-grow: 1; position: absolute; bottom: 0; background-image: url(&quot;project://database/Assets/Art/App%20Design/APPTitle.png?fileID=2800000&amp;guid=1b9504e5fa1cf47f0adc33a42a3bfff2&amp;type=3#APPTitle&quot;); -unity-background-scale-mode: scale-to-fit; width: 1000px; height: 150px; left: 61px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen01" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background01.jpg?fileID=2800000&amp;guid=2a767094b550a47bbb0a942b856e6dd6&amp;type=3#Background01&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Weather" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton01" tooltip="Back" class="back-button" />
+            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" style="position: absolute; width: 600px; height: 100px; bottom: 41px; left: 74px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); font-size: 36px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen02" class="ScreenTemplate ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background02.jpg?fileID=2800000&amp;guid=06ac2db88fb4b4559aefa6afeb2fb43a&amp;type=3#Background02&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="TV Shows" name="ScreenTitle" emoji-fallback-support="false" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton02" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen03" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background03.jpg?fileID=2800000&amp;guid=998d296e969034a8481552a4e428c0a3&amp;type=3#Background03&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Sports" name="ScreenTitle" double-click-selects-word="false" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton03" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen04" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background04.jpg?fileID=2800000&amp;guid=399f845a0c42b4177b5c4bcecf10e1a1&amp;type=3#Background04&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="News" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton04" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen05" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background05.jpg?fileID=2800000&amp;guid=750f2351ebd874734916dd8d5d6fc353&amp;type=3#Background05&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Tic-Tac-Toe" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton05" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen06" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background06.jpg?fileID=2800000&amp;guid=27dac0a7c17994607a8183a7c29c7cda&amp;type=3#Background06&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Match 3" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton06" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen07" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background07.jpg?fileID=2800000&amp;guid=173987c71d7bd4f6dbaf26e09b3548ad&amp;type=3#Background07&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Sudoku" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton07" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen08" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background08.jpg?fileID=2800000&amp;guid=13e57ab347651423a952ae0b3791e6d1&amp;type=3#Background08&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Trivia Quiz" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton08" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen09" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background01.jpg?fileID=2800000&amp;guid=2a767094b550a47bbb0a942b856e6dd6&amp;type=3#Background01&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Daily Quote" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton09" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen10" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background10.jpg?fileID=2800000&amp;guid=38c390624240b4167875d29c1c676af8&amp;type=3#Background10&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Currency Rate" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton10" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen11" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Fun Facts" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton11" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen12" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background12.jpg?fileID=2800000&amp;guid=1e316449c0c0c4c43a70c847dce9c211&amp;type=3#Background12&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:Label text="Drawing Pad" name="ScreenTitle" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label name="BackButton12" tooltip="Back" class="back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
