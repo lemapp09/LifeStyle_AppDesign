@@ -235,6 +235,8 @@ VisualElement {
     margin-right: 25px;
     margin-bottom: 25px;
     margin-left: 25px;
+    background-image: url("project://database/Assets/Art/App%20Design/peelingPaint.png?fileID=2800000&guid=426d9ff5ba1ce4634a7203fb8a1df229&type=3#peelingPaint");
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .score-label {
@@ -254,11 +256,21 @@ VisualElement {
     height: 60px;
 }
 
+.search-label {
+    font-size: 48px;
+    color: white;
+    -unity-text-align: upper-center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+}
+
 .show-search-field {
     width: 80%;
     height: 50px;
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 36px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
 }
 
 .show-list {
@@ -285,4 +297,54 @@ VisualElement {
     color: white;
     margin-left: 20px;
     -unity-text-align: middle-left;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+}
+
+.show-details-container {
+    width: 100%;
+}
+
+.show-summary {
+    font-size: 36px;
+    color: white;
+    white-space: normal;
+    margin: 10px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+}
+
+.details-header {
+    font-size: 36px;
+    -unity-font-style: bold;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.episodes-container,
+.cast-container {
+    height: 300px;
+}
+
+.episode-element,
+.cast-element {
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.episode-name,
+.person-name,
+.character-name {
+    font-size: 24px;
+    color: white;
+    -unity-text-align: middle-left;
+}
+
+.person-image {
+    width: 50px;
+    height: 75px;
+    -unity-background-scale-mode: scale-to-fit;
+    margin-right: 10px;
 }

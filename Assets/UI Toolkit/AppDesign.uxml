@@ -36,12 +36,13 @@
             <ui:Label name="BackButton01" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown01" class="navigation-dropdown" />
         </ui:VisualElement>
-        <ui:VisualElement name="Screen02" class="ScreenTemplate ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background02.jpg?fileID=2800000&amp;guid=06ac2db88fb4b4559aefa6afeb2fb43a&amp;type=3#Background02&quot;);">
+        <ui:VisualElement name="Screen02" class="ScreenTemplate ScreenTemplate" style="display: flex; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background02.jpg?fileID=2800000&amp;guid=06ac2db88fb4b4559aefa6afeb2fb43a&amp;type=3#Background02&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:Label text="TV Shows" name="ScreenTitle" emoji-fallback-support="false" style="font-size: 144px; -unity-text-align: upper-center; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
-            <ui:Label name="BackButton02" tooltip="Back" class="back-button" />
-            <ui:TextField name="ShowSearchField" placeholder="Search for a TV show..." class="show-search-field" />
+            <ui:Label text="Enter Search Term in Field below" name="ShowSearchLabel" class="search-label" />
+            <ui:TextField name="ShowSearchField" placeholder="Search for a TV show..." value="Enter Search Term Here" class="show-search-field" />
             <ui:ScrollView name="ShowList" class="show-list" />
+            <ui:Label name="BackButton02" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown02" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen03" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background03.jpg?fileID=2800000&amp;guid=998d296e969034a8481552a4e428c0a3&amp;type=3#Background03&quot;);">
