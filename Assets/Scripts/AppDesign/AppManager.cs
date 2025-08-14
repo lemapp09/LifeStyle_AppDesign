@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using System.Text.RegularExpressions;
+using TMPro;
 
 namespace AppDesign
 {
@@ -19,11 +20,17 @@ namespace AppDesign
         // Component & Manager References
         private UIDocument _uiDocument;
         private WiggleEffect _wiggleEffect;
+        private WeatherManager _weatherManager;
         private NewsManager _newsManager;
         private TicTacToeController _ticTacToeController;
         private TVMazeManager _tvMazeManager;
+        private Match3Controller _match3Controller;
 
         // State & Data Containers
+        private TextField _weatherSearch;
+        private Label _weatherSubmitButton;
+        private VisualElement _weatherContainer;
+        private bool _weatherLoaded;
         private VisualElement _newsContainer;
         private bool _newsLoaded;
 
@@ -40,11 +47,30 @@ namespace AppDesign
 
             // Initialize components
             _wiggleEffect = GetComponent<WiggleEffect>() ?? gameObject.AddComponent<WiggleEffect>();
+            _weatherManager = GetComponent<WeatherManager>() ?? gameObject.AddComponent<WeatherManager>();
+            if (_weatherManager != null)
+            {
+                _weatherManager.OnWeatherRetrieved += PopulateWeather;
+            }
+
             _newsManager = GetComponent<NewsManager>() ?? gameObject.AddComponent<NewsManager>();
-            _ticTacToeController = GetComponent<TicTacToeController>() ?? gameObject.AddComponent<TicTacToeController>();
+            _ticTacToeController =
+                GetComponent<TicTacToeController>() ?? gameObject.AddComponent<TicTacToeController>();
             _tvMazeManager = GetComponent<TVMazeManager>() ?? gameObject.AddComponent<TVMazeManager>();
+            _match3Controller = GetComponent<Match3Controller>() ?? gameObject.AddComponent<Match3Controller>();
 
             // Find UI containers
+            _weatherSearch = root.Q<TextField>("WeatherSearchField");
+            _weatherSubmitButton = root.Q<Label>("WeatherSubmitButton");
+            if (_weatherSubmitButton != null)
+            {
+                _weatherSubmitButton.RegisterCallback<PointerUpEvent>(evt =>
+                {
+                    StartCoroutine(_weatherManager.GetWeather(_weatherSearch.value));
+                });
+            }
+
+            _weatherContainer = root.Q<VisualElement>("WeatherContainer");
             _newsContainer = root.Q<VisualElement>("NewsContainer");
 
             // Setup UI
@@ -110,10 +136,7 @@ namespace AppDesign
                 {
                     _backButtons.Add(backButton);
                     var currentScreen = screen;
-                    backButton.RegisterCallback<PointerUpEvent>(evt =>
-                    {
-                        ShowScreen("MainScreen");
-                    });
+                    backButton.RegisterCallback<PointerUpEvent>(evt => { ShowScreen("MainScreen"); });
                     backButton.RegisterCallback<PointerEnterEvent>(_wiggleEffect.OnHoverEnter);
                     backButton.RegisterCallback<PointerLeaveEvent>(_wiggleEffect.OnHoverLeave);
                 }
@@ -144,6 +167,7 @@ namespace AppDesign
             {
                 screen.style.display = DisplayStyle.None;
             }
+
             if (_mainScreen != null)
             {
                 _mainScreen.style.display = DisplayStyle.None;
@@ -156,12 +180,30 @@ namespace AppDesign
                 selectedScreen.style.display = DisplayStyle.Flex;
 
                 // Screen-specific logic
-                if (selectedScreen.name == "Screen02")
+                if (selectedScreen.name == "Screen01" && !_weatherLoaded) // Weather Screen
+                {
+                    string cityName = "New York City";
+                    _weatherLoaded = true;
+                    if (_weatherLoaded)
+                    {
+                        cityName = _weatherSearch.value;
+                    }
+
+                    if (_weatherContainer != null)
+                    {
+                        StartCoroutine(_weatherManager.GetWeather(cityName));
+                    }
+                }
+                else if (selectedScreen.name == "Screen02") // TV Show Search
                 {
                     var searchField = selectedScreen.Q<TextField>("ShowSearchField");
-                    searchField.RegisterCallback<ChangeEvent<string>>(evt => StartCoroutine(_tvMazeManager.SearchShows(evt.newValue, DisplayShows)));
+                    searchField.RegisterCallback<ChangeEvent<string>>(evt =>
+                        StartCoroutine(_tvMazeManager.SearchShows(evt.newValue, DisplayShows)));
                 }
-                else if (selectedScreen.name == "Screen04" && !_newsLoaded)
+                else if (selectedScreen.name == "Screen03") // Sports
+                {
+                }
+                else if (selectedScreen.name == "Screen04" && !_newsLoaded) // News
                 {
                     _newsLoaded = true;
                     if (_newsContainer != null)
@@ -169,9 +211,25 @@ namespace AppDesign
                         StartCoroutine(_newsManager.GetNews(PopulateNews));
                     }
                 }
-                else if (selectedScreen.name == "Screen05")
+                else if (selectedScreen.name == "Screen05") // Tic-Tac-Toe
                 {
                     _ticTacToeController.Initialize(selectedScreen);
+                }
+                else if (selectedScreen.name == "Screen06") // Match-3
+                {
+                    var gridSizeSelector = selectedScreen.Q<VisualElement>("GridSizeSelector");
+                    var buttons = gridSizeSelector.Query<Button>(className: "grid-size-button").ToList();
+                    buttons[0].RegisterCallback<ClickEvent>(evt =>
+                        _match3Controller.Initialize(selectedScreen, 9, _wiggleEffect));
+                    buttons[1].RegisterCallback<ClickEvent>(evt =>
+                        _match3Controller.Initialize(selectedScreen, 10, _wiggleEffect));
+                    buttons[2].RegisterCallback<ClickEvent>(evt =>
+                        _match3Controller.Initialize(selectedScreen, 11, _wiggleEffect));
+                    buttons[3].RegisterCallback<ClickEvent>(evt =>
+                        _match3Controller.Initialize(selectedScreen, 12, _wiggleEffect));
+
+                    // Default to 9x9
+                    _match3Controller.Initialize(selectedScreen, 9, _wiggleEffect);
                 }
             }
             else if (screenName == "MainScreen" && _mainScreen != null)
@@ -180,14 +238,111 @@ namespace AppDesign
             }
         }
 
+        public void PopulateWeather(WeatherForecast.WeatherRoot weatherData)
+        {
+            _weatherContainer.Clear();
+            
+            _weatherContainer.Add(CreateWeatherDisplay(weatherData));
+        }
+
+        public VisualElement CreateWeatherDisplay(WeatherForecast.WeatherRoot weatherData)
+        {
+            // The main container for all weather information
+            var mainContainer = new VisualElement();
+            mainContainer.style.flexDirection = FlexDirection.Row; // Horizontal layout
+
+            // The left-side container for the large temperature display and "FEELS LIKE" text
+            var temperatureContainer = new VisualElement();
+            temperatureContainer.style.flexGrow = 1; // Allows it to take up available space
+            temperatureContainer.style.alignItems = Align.Center;
+            
+            // Weather Icon
+            var weatherIconContainer = new VisualElement();
+            var icon = Resources.Load<Texture2D>("WeatherIcons/Clear");
+            weatherIconContainer.style.backgroundImage = new StyleBackground(icon);
+            weatherIconContainer.AddToClassList("weather-icon");
+            temperatureContainer.Add(weatherIconContainer);
+
+            // The large temperature value
+            var temperatureLabel = new Label(weatherData.current.temp_f.ToString() + "°");
+            temperatureLabel.style.fontSize = 200;
+            //temperatureLabel.style.unityFontWeight = FontWeight.Bold;
+            temperatureContainer.Add(temperatureLabel);
+
+            // The "FEELS LIKE" text
+            var feelsLikeLabel = new Label("FEELS LIKE: " + weatherData.current.feelslike_f.ToString() + "°");
+            feelsLikeLabel.style.fontSize = 48;
+            temperatureContainer.Add(feelsLikeLabel);
+
+            mainContainer.Add(temperatureContainer);
+
+            // The right-side container for the detailed conditions
+            var detailsContainer = new VisualElement();
+            detailsContainer.style.flexGrow = 1;
+
+            // Function to create a detail line (e.g., "WIND: " + weatherData.current.wind_dir + "weatherData.current.wind_mph.ToString() " +  + " MPH")
+            void AddDetailLine(string labelText)
+            {
+                var detailLabel = new Label(labelText);
+                detailLabel.style.fontSize = 48;
+                detailsContainer.Add(detailLabel);
+            }
+
+            AddDetailLine(
+                "WIND: " + weatherData.current.wind_dir + " "+ weatherData.current.wind_mph.ToString()  + " MPH");
+            AddDetailLine("PRESSURE: " + weatherData.current.pressure_in.ToString() + "\"");
+            AddDetailLine("DEWPOINT: " + weatherData.current.dewpoint_f.ToString() + "°");
+            AddDetailLine("HUMIDITY: " + weatherData.current.humidity.ToString() + "%");
+
+            mainContainer.Add(detailsContainer);
+
+            // The lower row container for weatherAPI's logo
+            var logoContainer = new VisualElement();
+            logoContainer.style.flexGrow = 1; // Allows it to take up available space
+            logoContainer.style.alignItems = Align.Center;
+            
+            // Weather API logo
+            var logo = Resources.Load<Texture2D>("WeatherIcons/weatherapi_logo");
+            logoContainer.style.backgroundImage = new StyleBackground(logo);
+            logoContainer.RegisterCallback<ClickEvent>(evt => Application.OpenURL("https://www.weatherapi.com/"));
+            logoContainer.AddToClassList("weather-logo");
+            
+            var displayContainer = new VisualElement();
+            displayContainer.style.flexGrow = 1;
+            displayContainer.style.alignItems = Align.FlexEnd;
+            displayContainer.Add(mainContainer);
+            displayContainer.Add(logoContainer);
+
+            return displayContainer;
+        }
+
         private void PopulateNews(NewsArticle[] articles)
         {
+            _newsLoaded = false;
             if (articles == null) return;
+            int newsCount = 0;
             _newsContainer.Clear();
             foreach (var article in articles)
             {
                 var articleElement = new VisualElement();
-                articleElement.AddToClassList("news-article");
+                switch (newsCount % 3)
+                {
+                    case 0:
+                        articleElement.AddToClassList("news-article01");
+                        break;
+                    case 1:
+                        articleElement.AddToClassList("news-article02");
+                        break;
+                    case 2:
+                        articleElement.AddToClassList("news-article03");
+                        break;
+                    default:
+                        // This should never be hit, but included as good practice
+                        articleElement.AddToClassList("news-article01");
+                        break;
+                }
+
+                newsCount++;
 
                 var title = new Label(article.title);
                 title.AddToClassList("news-title");
@@ -229,6 +384,7 @@ namespace AppDesign
                 {
                     StartCoroutine(LoadImage(show.image.medium, showImage));
                 }
+
                 showElement.Add(showImage);
 
                 var showName = new Label(show.name);
@@ -262,7 +418,8 @@ namespace AppDesign
             episodesContainer.AddToClassList("episodes-container");
             detailsContainer.Add(episodesContainer);
 
-            StartCoroutine(_tvMazeManager.GetEpisodes(show.id, episodes => DisplayEpisodes(episodes, episodesContainer)));
+            StartCoroutine(
+                _tvMazeManager.GetEpisodes(show.id, episodes => DisplayEpisodes(episodes, episodesContainer)));
 
             var castHeader = new Label("Cast");
             castHeader.AddToClassList("details-header");
@@ -308,6 +465,7 @@ namespace AppDesign
                 {
                     StartCoroutine(LoadImage(member.person.image.medium, personImage));
                 }
+
                 castElement.Add(personImage);
 
                 var personName = new Label(member.person.name);
@@ -357,6 +515,7 @@ namespace AppDesign
             {
                 StartCoroutine(LoadImage(person.image.original, personImage));
             }
+
             detailsContainer.Add(personImage);
 
             var personName = new Label(person.name);
@@ -396,6 +555,12 @@ namespace AppDesign
             {
                 backButton.UnregisterCallback<PointerEnterEvent>(_wiggleEffect.OnHoverEnter);
                 backButton.UnregisterCallback<PointerLeaveEvent>(_wiggleEffect.OnHoverLeave);
+            }
+
+
+            if (_weatherManager != null)
+            {
+                _weatherManager.OnWeatherRetrieved -= PopulateWeather;
             }
         }
     }

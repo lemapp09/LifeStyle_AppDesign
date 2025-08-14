@@ -163,12 +163,67 @@ VisualElement {
     -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
     font-size: 36px;
     border-radius: 25px;
+    color: black;
     background-color: rgba(152, 114, 114, 0);
 }
 
 .navigation-dropdown .unity-base-field__input {
-    color: white;
+    color: rgb(59, 89, 90);
     padding-left: 8px;
+}
+
+.weather-container {
+    height: 55%;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 90%;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+    background-color: rgba(38, 64, 54, 0.67);
+    color: rgb(255, 255, 255);
+}
+
+.weather-search-field {
+    width: 80%;
+    height: 65px;
+    margin-top: 20px;
+    color: black;
+    background-color: white;
+    font-size: 36px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+}
+
+.weather-submit-button {
+    height: 65px;
+    width: 17%;
+    border-bottom-color: black;
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    font-size: 36px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+    margin-top: 20px;
+    margin-left: 15px;
+    -unity-text-align: middle-center;
+}
+
+.weather-icon {
+    width: 500px;
+    height: 500px;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 500px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.weather-logo {
+    width: 100%;
+    height: 100px;
+    -unity-background-scale-mode: scale-to-fit;
+    align-self: flex-end;
+    background-position-x: right 0;
+    background-color: rgb(255, 255, 255);
+    margin-top: 15px;
 }
 
 .news-container {
@@ -178,8 +233,22 @@ VisualElement {
     max-width: 90%;
 }
 
-.news-article {
+.news-article01 {
     background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.news-article02 {
+    background-color: rgba(13, 33, 36, 0.5);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.news-article03 {
+    background-color: rgba(49, 26, 17, 0.5);
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
@@ -240,13 +309,14 @@ VisualElement {
 }
 
 .score-label {
-    font-size: 48px;
+    font-size: 64px;
     color: white;
     margin-top: 20px;
     margin-bottom: 50px;
     -unity-text-align: upper-center;
     width: 625px;
     min-width: 525px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
 }
 
 .reset-button {
@@ -254,6 +324,63 @@ VisualElement {
     margin-top: 20px;
     width: 200px;
     height: 60px;
+}
+
+.match3-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.match3-row {
+    flex-direction: row;
+}
+
+.match3-cell {
+    width: 100px;
+    height: 100px;
+}
+
+.grid-size-selector {
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.grid-size-button {
+    font-size: 48px;
+    margin: 5px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+}
+
+.match3-grid {
+    background-color: black;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 900px;
+}
+
+.match3-piece {
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.match3-piece09 {
+    width: 100px;
+    height: 100px;
+}
+
+.match3-piece10 {
+    width: 90px;
+    height: 90px;
+}
+
+.match3-piece11 {
+    width: 81px;
+    height: 81px;
+}
+
+.match3-piece12 {
+    width: 75px;
+    height: 75px;
 }
 
 .search-label {
@@ -320,12 +447,22 @@ VisualElement {
     margin-bottom: 10px;
 }
 
-.episodes-container,
+.episodes-container {
+    height: 300px;
+}
+
 .cast-container {
     height: 300px;
 }
 
-.episode-element,
+.episode-element {
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 .cast-element {
     flex-direction: row;
     margin: 5px;
@@ -334,8 +471,18 @@ VisualElement {
     border-radius: 5px;
 }
 
-.episode-name,
-.person-name,
+.episode-name {
+    font-size: 24px;
+    color: white;
+    -unity-text-align: middle-left;
+}
+
+.person-name {
+    font-size: 24px;
+    color: white;
+    -unity-text-align: middle-left;
+}
+
 .character-name {
     font-size: 24px;
     color: white;
