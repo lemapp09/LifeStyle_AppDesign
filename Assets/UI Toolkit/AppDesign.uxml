@@ -53,7 +53,10 @@
         </ui:VisualElement>
         <ui:VisualElement name="Screen03" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background03.jpg?fileID=2800000&amp;guid=998d296e969034a8481552a4e428c0a3&amp;type=3#Background03&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
-            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Sports.png?fileID=2800000&amp;guid=2bce32d0b73e24cc5b763a1b005bc057&amp;type=3#Sports&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 15%; max-height: 15%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Sports.png?fileID=2800000&amp;guid=2bce32d0b73e24cc5b763a1b005bc057&amp;type=3#Sports&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:VisualElement name="sports-panel-root" class="sports-panel-root">
+                <ui:ScrollView name="sports-scrollview" class="sports-scrollview" />
+            </ui:VisualElement>
             <ui:Label name="BackButton03" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown03" class="navigation-dropdown" />
         </ui:VisualElement>
@@ -105,9 +108,197 @@
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown06" class="navigation-dropdown" />
             <ui:Label name="BackButton06" tooltip="Back" class="back-button" />
         </ui:VisualElement>
-        <ui:VisualElement name="Screen07" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background07.jpg?fileID=2800000&amp;guid=173987c71d7bd4f6dbaf26e09b3548ad&amp;type=3#Background07&quot;);">
+        <ui:VisualElement name="Screen07" class="ScreenTemplate" style="display: flex; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background07.jpg?fileID=2800000&amp;guid=173987c71d7bd4f6dbaf26e09b3548ad&amp;type=3#Background07&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Sudoku.png?fileID=2800000&amp;guid=569737262ab9244a58292dd064cec453&amp;type=3#Sudoku&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 15%; max-height: 15%;" />
+            <ui:VisualElement name="sudoku-board" class="sudoku-board">
+                <ui:VisualElement name="sudoku-row1" class="sudoku-row">
+                    <ui:VisualElement name="sudoku-cell-group1" class="sudoku-cell-group" style="background-color: rgb(147, 172, 166);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell01" focusable="true" text="1" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell02" focusable="true" text="2" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell03" focusable="true" text="3" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell04" focusable="true" text="4" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell05" focusable="true" text="5" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell06" focusable="true" text="6" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell07" focusable="true" text="7" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell08" focusable="true" text="8" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell09" focusable="true" text="9" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="sudoku-cell-group2" class="sudoku-cell-group" style="background-color: rgb(168, 143, 120);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell10" focusable="true" text="1" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell11" focusable="true" text="2" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell12" focusable="true" text="3" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell13" focusable="true" text="4" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell14" focusable="true" text="5" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell15" focusable="true" text="6" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell16" focusable="true" text="7" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell17" focusable="true" text="8" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell18" focusable="true" text="9" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="sudoku-cell-group3" class="sudoku-cell-group" style="background-color: rgb(147, 172, 167);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell19" focusable="true" text="1" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell20" focusable="true" text="2" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell21" focusable="true" text="3" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell22" focusable="true" text="4" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell23" focusable="true" text="5" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell24" focusable="true" text="6" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell25" focusable="true" text="7" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell26" focusable="true" text="8" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell27" focusable="true" text="9" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="sudoku-row2" class="sudoku-row">
+                    <ui:VisualElement name="sudoku-cell-group1" class="sudoku-cell-group" style="background-color: rgb(168, 144, 121);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell28" focusable="true" text="1" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell29" focusable="true" text="2" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell30" focusable="true" text="3" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell31" focusable="true" text="4" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell32" focusable="true" text="5" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell33" focusable="true" text="6" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell34" focusable="true" text="7" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell35" focusable="true" text="8" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell36" focusable="true" text="9" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="sudoku-cell-group2" class="sudoku-cell-group" style="background-color: rgb(147, 172, 167);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell37" focusable="true" text="1" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell38" focusable="true" text="2" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell39" focusable="true" text="3" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell40" focusable="true" text="4" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell41" focusable="true" text="5" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell42" focusable="true" text="6" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell43" focusable="true" text="7" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell44" focusable="true" text="8" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell45" focusable="true" text="9" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="sudoku-cell-group3" class="sudoku-cell-group" style="background-color: rgb(168, 144, 121);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell46" focusable="true" text="1" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell47" focusable="true" text="2" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell48" focusable="true" text="3" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell49" focusable="true" text="4" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell50" focusable="true" text="5" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell51" focusable="true" text="6" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell52" focusable="true" text="7" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell53" focusable="true" text="8" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell54" focusable="true" text="9" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="sudoku-row3" class="sudoku-row">
+                    <ui:VisualElement name="sudoku-cell-group1" class="sudoku-cell-group" style="flex-grow: 1; align-items: stretch; align-self: auto; align-content: auto; flex-wrap: nowrap; background-color: rgb(147, 172, 167);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell55" focusable="true" text="1" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell56" focusable="true" text="2" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell57" focusable="true" text="3" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell58" focusable="true" text="4" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell59" focusable="true" text="5" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell60" focusable="true" text="6" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell61" focusable="true" text="7" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell62" focusable="true" text="8" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell63" focusable="true" text="9" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="sudoku-cell-group2" class="sudoku-cell-group" style="background-color: rgb(168, 144, 121);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell64" focusable="true" text="1" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell65" focusable="true" text="2" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell66" focusable="true" text="3" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell67" focusable="true" text="4" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell68" focusable="true" text="5" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell69" focusable="true" text="6" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell70" focusable="true" text="7" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell71" focusable="true" text="8" class="sudoku-cell sudoku-cell-b" />
+                            <ui:Button name="sudoku-cell72" focusable="true" text="9" class="sudoku-cell sudoku-cell-b" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="sudoku-cell-group3" class="sudoku-cell-group" style="background-color: rgb(147, 172, 167);">
+                        <ui:VisualElement name="sudoku-group-row1" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell73" focusable="true" text="1" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell74" focusable="true" text="2" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell75" focusable="true" text="3" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row2" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell76" focusable="true" text="4" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell77" focusable="true" text="5" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell78" focusable="true" text="6" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="sudoku-group-row3" class="sudoku-group-row">
+                            <ui:Button name="sudoku-cell79" focusable="true" text="7" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell80" focusable="true" text="8" class="sudoku-cell sudoku-cell-a" />
+                            <ui:Button name="sudoku-cell81" focusable="true" text="9" class="sudoku-cell sudoku-cell-a" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="NumberButtonContainer" style="flex-grow: 1; width: 900px; max-width: 900px; height: 100px; max-height: 100px; margin-top: 30px; flex-direction: row; justify-content: space-evenly;">
+                <ui:Button text="1" name="sudoku-number-selector-1" class="sudoku-number-selector" />
+                <ui:Button text="2" name="sudoku-number-selector-2" class="sudoku-number-selector" />
+                <ui:Button text="3" name="sudoku-number-selector-3" class="sudoku-number-selector" />
+                <ui:Button text="4" name="sudoku-number-selector-4" class="sudoku-number-selector" />
+                <ui:Button text="5" name="sudoku-number-selector-5" class="sudoku-number-selector" />
+                <ui:Button text="6" name="sudoku-number-selector-6" class="sudoku-number-selector" />
+                <ui:Button text="7" name="sudoku-number-selector-7" class="sudoku-number-selector" />
+                <ui:Button text="8" name="sudoku-number-selector-8" class="sudoku-number-selector" />
+                <ui:Button text="9" name="sudoku-number-selector-9" class="sudoku-number-selector" />
+            </ui:VisualElement>
+            <ui:VisualElement name="sudoku-level-selector-container" style="flex-grow: 1; margin-top: 30px; width: 900px; height: 100px; max-width: 900px; max-height: 100px; flex-direction: row; justify-content: space-evenly; background-color: rgba(208, 141, 81, 0.75);">
+                <ui:ToggleButtonGroup label="Difficulty&#10;Level" name="sudoku-level-selector" value="1000" class="toggle-group sudoku-toggle-group">
+                    <ui:Button text=" Easy " />
+                    <ui:Button text=" Moderate " />
+                    <ui:Button text=" Hard " />
+                    <ui:Button text=" Expert " />
+                </ui:ToggleButtonGroup>
+            </ui:VisualElement>
+            <ui:VisualElement name="BottomRow" style="flex-grow: 1; flex-direction: row; width: 950px; max-width: 950px; height: 150px; max-height: 150px;">
+                <ui:Label text="Select an empty cell first, &#10;then select one of the numbers above." name="Instructions" style="margin-top: 25px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); font-size: 36px; color: rgb(255, 255, 255); background-color: rgba(51, 51, 51, 0.51);" />
+                <ui:VisualElement name="ErrorContainer" style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label text="X" name="Error1" class="sudoku-error" />
+                    <ui:Label text="X" name="Error2" class="sudoku-error" />
+                    <ui:Label text="X" name="Error3" class="sudoku-error" />
+                </ui:VisualElement>
+            </ui:VisualElement>
             <ui:Label name="BackButton07" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown07" class="navigation-dropdown" />
         </ui:VisualElement>

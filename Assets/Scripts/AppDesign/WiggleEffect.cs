@@ -34,7 +34,7 @@ namespace AppDesign
                     _wiggleCoroutines.Remove(elem);
                 }
 
-                elem.transform.rotation = Quaternion.identity;
+                elem.style.rotate = new Rotate(Quaternion.identity);
             }
         }
 
@@ -43,9 +43,9 @@ namespace AppDesign
             float timer = 0f;
             while (true)
             {
-                timer += Time.deltaTime * 20f; // speed
+                timer += Time.deltaTime * 10f; // speed
                 float angle = Mathf.Sin(timer) * 5f; // amplitude
-                elem.transform.rotation = Quaternion.Euler(0, 0, angle);
+                elem.style.rotate = new Rotate(angle, new Vector3(0, 0, angle));
                 yield return null;
             }
         }

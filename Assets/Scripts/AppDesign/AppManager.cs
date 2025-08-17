@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using System.Text.RegularExpressions;
-using TMPro;
+using System.Linq;
 
 namespace AppDesign
 {
@@ -19,11 +19,17 @@ namespace AppDesign
 
         // Component & Manager References
         private UIDocument _uiDocument;
+        private StructureElements _structureElements;
         private WiggleEffect _wiggleEffect;
         private WeatherManager _weatherManager;
+        private WeatherUIManager _weatherUIManager;
         private NewsManager _newsManager;
+        private NewsUIManager _newsUIManager;
+        private SportsManager _sportsManager;
+        private SportsUIManager _sportsUIManager;
         private TicTacToeController _ticTacToeController;
         private TVMazeManager _tvMazeManager;
+        private TVMazeUIManager _tvMazeUIManager;
         private Match3Controller _match3Controller;
 
         // State & Data Containers
@@ -32,7 +38,14 @@ namespace AppDesign
         private VisualElement _weatherContainer;
         private bool _weatherLoaded;
         private VisualElement _newsContainer;
-        private bool _newsLoaded;
+        private VisualElement _sportsContainer;
+        
+        // Sudoku
+        private SudokuCellData[] _sudokuCellData = new SudokuCellData[82];
+        private SudokuManager _sudokuManager;
+        private List<Button> _sudokuNumberSelectors;
+        private List<Label> _sudokuErrors;
+        private ToggleButtonGroup _sudokuToggleButtonGroup;
 
         void Awake()
         {
@@ -48,16 +61,25 @@ namespace AppDesign
             // Initialize components
             _wiggleEffect = GetComponent<WiggleEffect>() ?? gameObject.AddComponent<WiggleEffect>();
             _weatherManager = GetComponent<WeatherManager>() ?? gameObject.AddComponent<WeatherManager>();
+            _weatherUIManager = GetComponent<WeatherUIManager>() ?? gameObject.AddComponent<WeatherUIManager>();
             if (_weatherManager != null)
             {
-                _weatherManager.OnWeatherRetrieved += PopulateWeather;
+                _weatherManager.OnWeatherRetrieved += _weatherUIManager.PopulateWeather;
             }
 
+            _structureElements = GetComponent<StructureElements>() ?? gameObject.AddComponent<StructureElements>();
             _newsManager = GetComponent<NewsManager>() ?? gameObject.AddComponent<NewsManager>();
+            _newsUIManager = GetComponent<NewsUIManager>() ?? gameObject.AddComponent<NewsUIManager>();
+            _sportsManager = GetComponent<SportsManager>() ?? gameObject.AddComponent<SportsManager>();
+            _sportsUIManager = GetComponent<SportsUIManager>() ?? gameObject.AddComponent<SportsUIManager>();
             _ticTacToeController =
                 GetComponent<TicTacToeController>() ?? gameObject.AddComponent<TicTacToeController>();
             _tvMazeManager = GetComponent<TVMazeManager>() ?? gameObject.AddComponent<TVMazeManager>();
+            _tvMazeUIManager = GetComponent<TVMazeUIManager>() ?? gameObject.AddComponent<TVMazeUIManager>();
+            _tvMazeUIManager.SetUIDocument(_uiDocument);
+            _tvMazeUIManager.SetTvMazeManager(_tvMazeManager);
             _match3Controller = GetComponent<Match3Controller>() ?? gameObject.AddComponent<Match3Controller>();
+            _sudokuManager = GetComponent<SudokuManager>() ?? gameObject.AddComponent<SudokuManager>();
 
             // Find UI containers
             _weatherSearch = root.Q<TextField>("WeatherSearchField");
@@ -71,96 +93,64 @@ namespace AppDesign
             }
 
             _weatherContainer = root.Q<VisualElement>("WeatherContainer");
+            _weatherUIManager.SetWeatherContainer(_weatherContainer);
             _newsContainer = root.Q<VisualElement>("NewsContainer");
+            _newsUIManager.SetNewsContainer(_newsContainer);
+            _sportsContainer = root.Q<VisualElement>("sports-scrollview");
+            
+            //Sudoku Set-up
+            for (int i = 0; i < _sudokuCellData.Length; i++)
+            {
+                _sudokuCellData[i] = new SudokuCellData(0, 0, 0, 0, null, 0, 0);
+            }
+            var cells = root.Query<Button>(className: "sudoku-cell").ToList();
+            foreach (var cell in cells)
+            {
+                string lastTwo = cell.name.Substring(cell.name.Length - 2, 2);
+                int value = int.Parse(lastTwo);
+                _sudokuCellData[value].ID = value;
+                _sudokuCellData[value].UILabel = cell;
+                int block = (value/ 9) + 1;
+                
+                // Row calculation (1-based)
+                int row = ((block - 1) / 3) + 1;
+                _sudokuCellData[value].Row = row;
+
+                // Column calculation (1-based)
+                int column = ((block - 1) % 3) + 1;
+                _sudokuCellData[value].Column = column;
+                
+                // Cell calculation
+                int cellNumber = (value % 9) + 1;
+                _sudokuCellData[value].Cell = cellNumber;
+            }
+            _sudokuNumberSelectors = root.Query<Button>( className:"sudoku-number-selector").ToList();
+            foreach (var selector in _sudokuNumberSelectors)
+            {
+                selector.RegisterCallback<PointerUpEvent>(_sudokuManager.NumberSelected);
+            }
+            _sudokuToggleButtonGroup = root.Q<ToggleButtonGroup>("sudoku-level-selector");
+            _sudokuErrors = root.Query<Label>(className:"sudoku-error").ToList();
+            _sudokuManager.SetSudokuErrors(_sudokuErrors);
+            _sudokuToggleButtonGroup.RegisterValueChangedCallback(_sudokuManager.LevelSelected);
+
+            _sudokuManager.SetSudokuCellData(_sudokuCellData);
 
             // Setup UI
-            FindScreens(root);
-            FindAppElements(root);
-            AssignScreensToAppElements();
-            SetupBackButtons();
-            SetupNavigationDropdowns(root);
+            _structureElements.FindScreens(root, _mainScreen, _otherScreens);
+            _structureElements.FindAppElements(root, _appElements, _wiggleEffect);
+            _structureElements.AssignScreensToAppElements( _appElements,_otherScreens, this);
+            SetUpSportsContainers();
+            _structureElements.SetupBackButtons(_backButtons, _otherScreens, this, _wiggleEffect);
+            _structureElements.SetupNavigationDropdowns(root, _navigationDropdowns ,_otherScreens, this);
         }
 
-        private void FindScreens(VisualElement root)
+        private void SetUpSportsContainers()
         {
-            _mainScreen = root.Q<VisualElement>("MainScreen");
-            root.Query<VisualElement>(className: "ScreenTemplate").ForEach(screenElem =>
-            {
-                _otherScreens.Add(screenElem);
-                screenElem.style.display = DisplayStyle.None;
-            });
-
-            if (_mainScreen != null)
-            {
-                _mainScreen.style.display = DisplayStyle.Flex;
-            }
-            else
-            {
-                Debug.LogError("MainScreen not found. Ensure it has the name 'MainScreen'.");
-            }
-
-            if (_otherScreens.Count != 12)
-            {
-                Debug.LogWarning($"Expected 12 non-main screens, found {_otherScreens.Count}.");
-            }
+            // 
         }
 
-        private void FindAppElements(VisualElement root)
-        {
-            _appElements.Clear();
-            root.Query<VisualElement>(className: "appElement").ForEach(appElem =>
-            {
-                _appElements.Add(appElem);
-                appElem.RegisterCallback<PointerEnterEvent>(_wiggleEffect.OnHoverEnter);
-                appElem.RegisterCallback<PointerLeaveEvent>(_wiggleEffect.OnHoverLeave);
-            });
-        }
-
-        private void AssignScreensToAppElements()
-        {
-            for (int i = 0; i < _appElements.Count && i < _otherScreens.Count; i++)
-            {
-                int screenIndex = i;
-                var appElem = _appElements[i];
-                appElem.RegisterCallback<ClickEvent>(evt => ShowScreen(_otherScreens[screenIndex].name));
-            }
-        }
-
-        private void SetupBackButtons()
-        {
-            _backButtons.Clear();
-            foreach (var screen in _otherScreens)
-            {
-                var backButton = screen.Q<Label>(className: "back-button");
-                if (backButton != null)
-                {
-                    _backButtons.Add(backButton);
-                    var currentScreen = screen;
-                    backButton.RegisterCallback<PointerUpEvent>(evt => { ShowScreen("MainScreen"); });
-                    backButton.RegisterCallback<PointerEnterEvent>(_wiggleEffect.OnHoverEnter);
-                    backButton.RegisterCallback<PointerLeaveEvent>(_wiggleEffect.OnHoverLeave);
-                }
-            }
-        }
-
-        private void SetupNavigationDropdowns(VisualElement root)
-        {
-            _navigationDropdowns.Clear();
-            root.Query<DropdownField>(className: "navigation-dropdown").ForEach(dropdown =>
-            {
-                _navigationDropdowns.Add(dropdown);
-                dropdown.RegisterValueChangedCallback(evt =>
-                {
-                    int selectedIndex = dropdown.choices.IndexOf(evt.newValue);
-                    if (selectedIndex >= 0 && selectedIndex < _otherScreens.Count)
-                    {
-                        ShowScreen(_otherScreens[selectedIndex].name);
-                    }
-                });
-            });
-        }
-
-        private void ShowScreen(string screenName)
+        public void ShowScreen(string screenName)
         {
             // Hide all screens first
             foreach (var screen in _otherScreens)
@@ -198,17 +188,20 @@ namespace AppDesign
                 {
                     var searchField = selectedScreen.Q<TextField>("ShowSearchField");
                     searchField.RegisterCallback<ChangeEvent<string>>(evt =>
-                        StartCoroutine(_tvMazeManager.SearchShows(evt.newValue, DisplayShows)));
+                        StartCoroutine(_tvMazeManager.SearchShows(evt.newValue, _tvMazeUIManager.DisplayShows)));
                 }
                 else if (selectedScreen.name == "Screen03") // Sports
                 {
+                    if (_sportsContainer != null)
+                    {
+                        StartCoroutine(_sportsManager.GetSports(_sportsUIManager.PopulateSports));
+                    }
                 }
-                else if (selectedScreen.name == "Screen04" && !_newsLoaded) // News
+                else if (selectedScreen.name == "Screen04" ) // News
                 {
-                    _newsLoaded = true;
                     if (_newsContainer != null)
                     {
-                        StartCoroutine(_newsManager.GetNews(PopulateNews));
+                        StartCoroutine(_newsManager.GetNews(_newsUIManager.PopulateNews));
                     }
                 }
                 else if (selectedScreen.name == "Screen05") // Tic-Tac-Toe
@@ -238,311 +231,6 @@ namespace AppDesign
             }
         }
 
-        public void PopulateWeather(WeatherForecast.WeatherRoot weatherData)
-        {
-            _weatherContainer.Clear();
-            
-            _weatherContainer.Add(CreateWeatherDisplay(weatherData));
-        }
-
-        public VisualElement CreateWeatherDisplay(WeatherForecast.WeatherRoot weatherData)
-        {
-            // The main container for all weather information
-            var mainContainer = new VisualElement();
-            mainContainer.style.flexDirection = FlexDirection.Row; // Horizontal layout
-
-            // The left-side container for the large temperature display and "FEELS LIKE" text
-            var temperatureContainer = new VisualElement();
-            temperatureContainer.style.flexGrow = 1; // Allows it to take up available space
-            temperatureContainer.style.alignItems = Align.Center;
-            
-            // Weather Icon
-            var weatherIconContainer = new VisualElement();
-            var icon = Resources.Load<Texture2D>("WeatherIcons/Clear");
-            weatherIconContainer.style.backgroundImage = new StyleBackground(icon);
-            weatherIconContainer.AddToClassList("weather-icon");
-            temperatureContainer.Add(weatherIconContainer);
-
-            // The large temperature value
-            var temperatureLabel = new Label(weatherData.current.temp_f.ToString() + "°");
-            temperatureLabel.style.fontSize = 200;
-            //temperatureLabel.style.unityFontWeight = FontWeight.Bold;
-            temperatureContainer.Add(temperatureLabel);
-
-            // The "FEELS LIKE" text
-            var feelsLikeLabel = new Label("FEELS LIKE: " + weatherData.current.feelslike_f.ToString() + "°");
-            feelsLikeLabel.style.fontSize = 48;
-            temperatureContainer.Add(feelsLikeLabel);
-
-            mainContainer.Add(temperatureContainer);
-
-            // The right-side container for the detailed conditions
-            var detailsContainer = new VisualElement();
-            detailsContainer.style.flexGrow = 1;
-
-            // Function to create a detail line (e.g., "WIND: " + weatherData.current.wind_dir + "weatherData.current.wind_mph.ToString() " +  + " MPH")
-            void AddDetailLine(string labelText)
-            {
-                var detailLabel = new Label(labelText);
-                detailLabel.style.fontSize = 48;
-                detailsContainer.Add(detailLabel);
-            }
-
-            AddDetailLine(
-                "WIND: " + weatherData.current.wind_dir + " "+ weatherData.current.wind_mph.ToString()  + " MPH");
-            AddDetailLine("PRESSURE: " + weatherData.current.pressure_in.ToString() + "\"");
-            AddDetailLine("DEWPOINT: " + weatherData.current.dewpoint_f.ToString() + "°");
-            AddDetailLine("HUMIDITY: " + weatherData.current.humidity.ToString() + "%");
-
-            mainContainer.Add(detailsContainer);
-
-            // The lower row container for weatherAPI's logo
-            var logoContainer = new VisualElement();
-            logoContainer.style.flexGrow = 1; // Allows it to take up available space
-            logoContainer.style.alignItems = Align.Center;
-            
-            // Weather API logo
-            var logo = Resources.Load<Texture2D>("WeatherIcons/weatherapi_logo");
-            logoContainer.style.backgroundImage = new StyleBackground(logo);
-            logoContainer.RegisterCallback<ClickEvent>(evt => Application.OpenURL("https://www.weatherapi.com/"));
-            logoContainer.AddToClassList("weather-logo");
-            
-            var displayContainer = new VisualElement();
-            displayContainer.style.flexGrow = 1;
-            displayContainer.style.alignItems = Align.FlexEnd;
-            displayContainer.Add(mainContainer);
-            displayContainer.Add(logoContainer);
-
-            return displayContainer;
-        }
-
-        private void PopulateNews(NewsArticle[] articles)
-        {
-            _newsLoaded = false;
-            if (articles == null) return;
-            int newsCount = 0;
-            _newsContainer.Clear();
-            foreach (var article in articles)
-            {
-                var articleElement = new VisualElement();
-                switch (newsCount % 3)
-                {
-                    case 0:
-                        articleElement.AddToClassList("news-article01");
-                        break;
-                    case 1:
-                        articleElement.AddToClassList("news-article02");
-                        break;
-                    case 2:
-                        articleElement.AddToClassList("news-article03");
-                        break;
-                    default:
-                        // This should never be hit, but included as good practice
-                        articleElement.AddToClassList("news-article01");
-                        break;
-                }
-
-                newsCount++;
-
-                var title = new Label(article.title);
-                title.AddToClassList("news-title");
-
-                var description = new Label(StripHtml(article.description));
-                description.AddToClassList("news-description");
-
-                articleElement.Add(title);
-                articleElement.Add(description);
-
-                if (!string.IsNullOrEmpty(article.url))
-                {
-                    var linkIcon = new VisualElement();
-                    linkIcon.AddToClassList("news-link-icon");
-                    linkIcon.tooltip = "Read full article";
-                    linkIcon.RegisterCallback<ClickEvent>(evt => Application.OpenURL(article.url));
-                    articleElement.Add(linkIcon);
-                }
-
-                _newsContainer.Add(articleElement);
-            }
-        }
-
-        private void DisplayShows(List<Show> shows)
-        {
-            var showList = _uiDocument.rootVisualElement.Q<ScrollView>("ShowList");
-            showList.Clear();
-
-            if (shows == null) return;
-
-            foreach (var show in shows)
-            {
-                var showElement = new VisualElement();
-                showElement.AddToClassList("show-element");
-
-                var showImage = new VisualElement();
-                showImage.AddToClassList("show-image");
-                if (show.image != null && !string.IsNullOrEmpty(show.image.medium))
-                {
-                    StartCoroutine(LoadImage(show.image.medium, showImage));
-                }
-
-                showElement.Add(showImage);
-
-                var showName = new Label(show.name);
-                showName.AddToClassList("show-name");
-                showElement.Add(showName);
-
-                showElement.RegisterCallback<ClickEvent>(evt => ShowShowDetails(show));
-
-                showList.Add(showElement);
-            }
-        }
-
-        private void ShowShowDetails(Show show)
-        {
-            var showList = _uiDocument.rootVisualElement.Q<ScrollView>("ShowList");
-            showList.Clear();
-
-            var detailsContainer = new VisualElement();
-            detailsContainer.AddToClassList("show-details-container");
-
-            var showSummary = new Label();
-            showSummary.text = StripHtml(show.summary);
-            showSummary.AddToClassList("show-summary");
-            detailsContainer.Add(showSummary);
-
-            var episodesHeader = new Label("Episodes");
-            episodesHeader.AddToClassList("details-header");
-            detailsContainer.Add(episodesHeader);
-
-            var episodesContainer = new ScrollView();
-            episodesContainer.AddToClassList("episodes-container");
-            detailsContainer.Add(episodesContainer);
-
-            StartCoroutine(
-                _tvMazeManager.GetEpisodes(show.id, episodes => DisplayEpisodes(episodes, episodesContainer)));
-
-            var castHeader = new Label("Cast");
-            castHeader.AddToClassList("details-header");
-            detailsContainer.Add(castHeader);
-
-            var castContainer = new ScrollView();
-            castContainer.AddToClassList("cast-container");
-            detailsContainer.Add(castContainer);
-
-            StartCoroutine(_tvMazeManager.GetCast(show.id, cast => DisplayCast(cast, castContainer)));
-
-            showList.Add(detailsContainer);
-        }
-
-        private void DisplayEpisodes(List<Episode> episodes, VisualElement container)
-        {
-            if (episodes == null) return;
-            container.Clear();
-            foreach (var episode in episodes)
-            {
-                var episodeElement = new VisualElement();
-                episodeElement.AddToClassList("episode-element");
-                var episodeName = new Label($"S{episode.season:00}E{episode.number:00}: {episode.name}");
-                episodeName.AddToClassList("episode-name");
-                episodeElement.Add(episodeName);
-                episodeElement.RegisterCallback<ClickEvent>(evt => ShowEpisodeDetails(episode));
-                container.Add(episodeElement);
-            }
-        }
-
-        private void DisplayCast(List<Cast> cast, VisualElement container)
-        {
-            if (cast == null) return;
-            container.Clear();
-            foreach (var member in cast)
-            {
-                var castElement = new VisualElement();
-                castElement.AddToClassList("cast-element");
-
-                var personImage = new VisualElement();
-                personImage.AddToClassList("person-image");
-                if (member.person.image != null && !string.IsNullOrEmpty(member.person.image.medium))
-                {
-                    StartCoroutine(LoadImage(member.person.image.medium, personImage));
-                }
-
-                castElement.Add(personImage);
-
-                var personName = new Label(member.person.name);
-                personName.AddToClassList("person-name");
-                castElement.Add(personName);
-
-                var characterName = new Label($"as {member.character.name}");
-                characterName.AddToClassList("character-name");
-                castElement.Add(characterName);
-
-                castElement.RegisterCallback<ClickEvent>(evt => ShowPersonDetails(member.person));
-
-                container.Add(castElement);
-            }
-        }
-
-        private void ShowEpisodeDetails(Episode episode)
-        {
-            var showList = _uiDocument.rootVisualElement.Q<ScrollView>("ShowList");
-            showList.Clear();
-
-            var detailsContainer = new VisualElement();
-            detailsContainer.AddToClassList("show-details-container");
-
-            var episodeName = new Label(episode.name);
-            episodeName.AddToClassList("details-header");
-            detailsContainer.Add(episodeName);
-
-            var episodeSummary = new Label(StripHtml(episode.summary));
-            episodeSummary.AddToClassList("show-summary");
-            detailsContainer.Add(episodeSummary);
-
-            showList.Add(detailsContainer);
-        }
-
-        private void ShowPersonDetails(Person person)
-        {
-            var showList = _uiDocument.rootVisualElement.Q<ScrollView>("ShowList");
-            showList.Clear();
-
-            var detailsContainer = new VisualElement();
-            detailsContainer.AddToClassList("show-details-container");
-
-            var personImage = new VisualElement();
-            personImage.AddToClassList("person-image-large");
-            if (person.image != null && !string.IsNullOrEmpty(person.image.original))
-            {
-                StartCoroutine(LoadImage(person.image.original, personImage));
-            }
-
-            detailsContainer.Add(personImage);
-
-            var personName = new Label(person.name);
-            personName.AddToClassList("details-header");
-            detailsContainer.Add(personName);
-
-            showList.Add(detailsContainer);
-        }
-
-        private string StripHtml(string input)
-        {
-            if (string.IsNullOrEmpty(input)) return "";
-            return Regex.Replace(input, "<.*?>", string.Empty);
-        }
-
-        private IEnumerator LoadImage(string url, VisualElement element)
-        {
-            using (UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(url))
-            {
-                yield return webRequest.SendWebRequest();
-                if (webRequest.result == UnityWebRequest.Result.Success)
-                {
-                    element.style.backgroundImage = new StyleBackground(DownloadHandlerTexture.GetContent(webRequest));
-                }
-            }
-        }
-
         void OnDisable()
         {
             foreach (var appElem in _appElements)
@@ -560,7 +248,7 @@ namespace AppDesign
 
             if (_weatherManager != null)
             {
-                _weatherManager.OnWeatherRetrieved -= PopulateWeather;
+                _weatherManager.OnWeatherRetrieved -= _weatherUIManager.PopulateWeather;
             }
         }
     }
