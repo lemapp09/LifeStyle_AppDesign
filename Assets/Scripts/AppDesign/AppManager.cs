@@ -31,6 +31,9 @@ namespace AppDesign
         private TVMazeManager _tvMazeManager;
         private TVMazeUIManager _tvMazeUIManager;
         private Match3Controller _match3Controller;
+        private TriviaManager _triviaManager;
+        private QuoteManager _quoteManager;
+        private MoneyManager _moneyManager;
 
         // State & Data Containers
         private TextField _weatherSearch;
@@ -46,6 +49,15 @@ namespace AppDesign
         private List<Button> _sudokuNumberSelectors;
         private List<Label> _sudokuErrors;
         private ToggleButtonGroup _sudokuToggleButtonGroup;
+        private VisualElement _sudokuGameWon;
+        private ScrollView _triviaScrollView;
+        
+        // Quote
+        private Label _quoteDropCap, _quoteRestOfText, _quoteAuthor;
+        
+        //Money
+        private ScrollView _moneyScrollview;
+        private Label _moneyLastUpdated;
 
         void Awake()
         {
@@ -79,7 +91,10 @@ namespace AppDesign
             _tvMazeUIManager.SetUIDocument(_uiDocument);
             _tvMazeUIManager.SetTvMazeManager(_tvMazeManager);
             _match3Controller = GetComponent<Match3Controller>() ?? gameObject.AddComponent<Match3Controller>();
+            _triviaManager = GetComponent<TriviaManager>() ?? gameObject.AddComponent<TriviaManager>();
             _sudokuManager = GetComponent<SudokuManager>() ?? gameObject.AddComponent<SudokuManager>();
+            _quoteManager = GetComponent<QuoteManager>() ?? gameObject.AddComponent<QuoteManager>();
+            _moneyManager = GetComponent<MoneyManager>() ?? gameObject.AddComponent<MoneyManager>();
 
             // Find UI containers
             _weatherSearch = root.Q<TextField>("WeatherSearchField");
@@ -133,8 +148,24 @@ namespace AppDesign
             _sudokuErrors = root.Query<Label>(className:"sudoku-error").ToList();
             _sudokuManager.SetSudokuErrors(_sudokuErrors);
             _sudokuToggleButtonGroup.RegisterValueChangedCallback(_sudokuManager.LevelSelected);
+            _sudokuGameWon = root.Q<VisualElement>(className:"sudoku-game-won");
+            _sudokuGameWon.visible = false;
+            _sudokuManager.SetSudokuGameWon(_sudokuGameWon);
 
             _sudokuManager.SetSudokuCellData(_sudokuCellData);
+            
+            _triviaScrollView = root.Q<ScrollView>("trivia-scrollview");
+            _triviaManager.SetTriviaScrollview(_triviaScrollView);
+            
+            _quoteDropCap = root.Q<Label>(className:"quote-drop-cap");
+            _quoteRestOfText = root.Q<Label>(className:"quote-restOfText");
+            _quoteAuthor = root.Q<Label>(className:"quote-author");
+            _quoteManager.SetUIElements(_quoteDropCap, _quoteRestOfText, _quoteAuthor);
+            _quoteManager.QuoteStart();
+            
+            _moneyScrollview = root.Q<ScrollView>("money-scrollview");
+            _moneyLastUpdated = root.Q<Label>("money-update-time");
+            _moneyManager.SetMoneyScrollview(_moneyScrollview, _moneyLastUpdated);
 
             // Setup UI
             _structureElements.FindScreens(root, _mainScreen, _otherScreens);
@@ -223,6 +254,10 @@ namespace AppDesign
 
                     // Default to 9x9
                     _match3Controller.Initialize(selectedScreen, 9, _wiggleEffect);
+                }
+                else if (selectedScreen.name == "Screen08") // Trivia
+                {
+                    _triviaManager.TriviaStart();
                 }
             }
             else if (screenName == "MainScreen" && _mainScreen != null)

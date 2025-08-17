@@ -44,7 +44,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="Screen02" class="ScreenTemplate ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background02.jpg?fileID=2800000&amp;guid=06ac2db88fb4b4559aefa6afeb2fb43a&amp;type=3#Background02&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
-            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/TVShows.png?fileID=2800000&amp;guid=056e1947ac32442c690a5f04548a0675&amp;type=3#TVShows&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 15%; max-height: 15%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/TVShows.png?fileID=2800000&amp;guid=056e1947ac32442c690a5f04548a0675&amp;type=3#TVShows&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 10%; max-height: 10%;" />
             <ui:Label text="Enter Search Term in Field below" name="ShowSearchLabel" class="search-label" />
             <ui:TextField name="ShowSearchField" placeholder="Search for a TV show..." value="Enter Search Term Here" class="show-search-field" />
             <ui:ScrollView name="ShowList" class="show-list" />
@@ -108,7 +108,7 @@
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown06" class="navigation-dropdown" />
             <ui:Label name="BackButton06" tooltip="Back" class="back-button" />
         </ui:VisualElement>
-        <ui:VisualElement name="Screen07" class="ScreenTemplate" style="display: flex; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background07.jpg?fileID=2800000&amp;guid=173987c71d7bd4f6dbaf26e09b3548ad&amp;type=3#Background07&quot;);">
+        <ui:VisualElement name="Screen07" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background07.jpg?fileID=2800000&amp;guid=173987c71d7bd4f6dbaf26e09b3548ad&amp;type=3#Background07&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Sudoku.png?fileID=2800000&amp;guid=569737262ab9244a58292dd064cec453&amp;type=3#Sudoku&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 15%; max-height: 15%;" />
             <ui:VisualElement name="sudoku-board" class="sudoku-board">
@@ -272,7 +272,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="NumberButtonContainer" style="flex-grow: 1; width: 900px; max-width: 900px; height: 100px; max-height: 100px; margin-top: 30px; flex-direction: row; justify-content: space-evenly;">
+            <ui:VisualElement name="NumberButtonContainer" tooltip="Can not change during game" style="flex-grow: 1; width: 900px; max-width: 900px; height: 100px; max-height: 100px; margin-top: 30px; flex-direction: row; justify-content: space-evenly;">
                 <ui:Button text="1" name="sudoku-number-selector-1" class="sudoku-number-selector" />
                 <ui:Button text="2" name="sudoku-number-selector-2" class="sudoku-number-selector" />
                 <ui:Button text="3" name="sudoku-number-selector-3" class="sudoku-number-selector" />
@@ -292,31 +292,50 @@
                 </ui:ToggleButtonGroup>
             </ui:VisualElement>
             <ui:VisualElement name="BottomRow" style="flex-grow: 1; flex-direction: row; width: 950px; max-width: 950px; height: 150px; max-height: 150px;">
-                <ui:Label text="Select an empty cell first, &#10;then select one of the numbers above." name="Instructions" style="margin-top: 25px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); font-size: 36px; color: rgb(255, 255, 255); background-color: rgba(51, 51, 51, 0.51);" />
+                <ui:Label text="Select an empty cell first, &#10;then select one of the numbers above.&#10;Can not change dificulty during game." name="Instructions" style="margin-top: 25px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); font-size: 36px; color: rgb(255, 255, 255); background-color: rgba(51, 51, 51, 0.51);" />
                 <ui:VisualElement name="ErrorContainer" style="flex-grow: 1; flex-direction: row;">
                     <ui:Label text="X" name="Error1" class="sudoku-error" />
                     <ui:Label text="X" name="Error2" class="sudoku-error" />
                     <ui:Label text="X" name="Error3" class="sudoku-error" />
                 </ui:VisualElement>
             </ui:VisualElement>
+            <ui:VisualElement name="GameWon" class="sudoku-game-won" />
             <ui:Label name="BackButton07" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown07" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen08" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background08.jpg?fileID=2800000&amp;guid=13e57ab347651423a952ae0b3791e6d1&amp;type=3#Background08&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
-            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Trivia.png?fileID=2800000&amp;guid=3b57a5e1efea5403fab2df94cc978311&amp;type=3#Trivia&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 15%; max-height: 15%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Trivia.png?fileID=2800000&amp;guid=3b57a5e1efea5403fab2df94cc978311&amp;type=3#Trivia&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 12%; max-height: 12%;" />
+            <ui:ScrollView name="trivia-scrollview" class="trivia-scrollview" style="flex-grow: 0; height: 70%; max-height: 70%;" />
+            <ui:VisualElement name="BottomRow" style="flex-grow: 1; width: 950px; height: 5%; max-height: 6%; max-width: 950px; flex-direction: row; justify-content: space-evenly;">
+                <ui:Button text="RESET" name="trivia-reset-button" style="-unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); font-size: 36px; background-color: rgb(219, 121, 38); border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; margin-top: 35px;" />
+            </ui:VisualElement>
             <ui:Label name="BackButton08" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown08" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen09" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background01.jpg?fileID=2800000&amp;guid=2a767094b550a47bbb0a942b856e6dd6&amp;type=3#Background01&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
-            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Quote.png?fileID=2800000&amp;guid=f82d00d87ef2044b3992d1514f79a36b&amp;type=3#Quote&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Quote.png?fileID=2800000&amp;guid=f82d00d87ef2044b3992d1514f79a36b&amp;type=3#Quote&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 12%; max-height: 12%;" />
+            <ui:ScrollView name="QuoteScrollview" style="width: 950px; height: 65%; max-width: 950px; max-height: 65%; background-color: rgba(48, 80, 80, 0.64);">
+                <ui:VisualElement name="quote-container" style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label text="T" name="quote-drop-cap" class="quote-drop-cap" />
+                    <ui:Label text="he quick brown fox jumps over the lazy dog." name="quote-restOfText" class="quote-restOfText" />
+                </ui:VisualElement>
+                <ui:VisualElement name="quote-author-container" style="flex-grow: 1; width: 950px; max-width: 950px; height: 65%;">
+                    <ui:Label text="Ben Franklin" name="quote-author" class="quote-author" />
+                </ui:VisualElement>
+            </ui:ScrollView>
             <ui:Label name="BackButton09" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown09" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen10" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background10.jpg?fileID=2800000&amp;guid=38c390624240b4167875d29c1c676af8&amp;type=3#Background10&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Money.png?fileID=2800000&amp;guid=8794a4ca4fab14ad6a6d7f33c4306069&amp;type=3#Money&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:ScrollView name="money-scrollview" class="money-scrollview" />
+            <ui:VisualElement name="money-last-update-container" style="flex-grow: 1; flex-direction: row; width: 950px; max-width: 950px; height: 3%; max-height: 3%;">
+                <ui:Label text="Last updated at (UTC):  " name="money-update-label" style="width: auto; max-width: 60%; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); color: rgb(255, 255, 255); font-size: 36px; margin-right: 24px;" />
+                <ui:Label text="12:00:00AM" name="money-update-time" class="money-update-time" />
+            </ui:VisualElement>
             <ui:Label name="BackButton10" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown10" class="navigation-dropdown" />
         </ui:VisualElement>

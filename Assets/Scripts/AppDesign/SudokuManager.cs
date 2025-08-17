@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace AppDesign
         private int _currentNumberSelected = 0;
         private Button _currentButton;
         private int[,] _board = new int[9, 9];
+        private VisualElement _sudokuGameWon;
+        private Color _blankCellColor = new Color(0.5f, 0.5f, 0.5f, 0.4f);
 
         // Entry point to generate a filled Sudoku _board
         public int[,] GenerateBoard()
@@ -128,7 +131,7 @@ namespace AppDesign
                     _sudokuCellData[cellNumber].DisplayValue = 0;
                     _sudokuCellData[cellNumber].UILabel.text = "";
                     _sudokuCellData[cellNumber].UILabel.style.backgroundColor =
-                        new StyleColor(new Color(0.5f, 0.5f, 0.5f, 0.9f));
+                        new StyleColor(_blankCellColor);
                     _sudokuCellData[cellNumber].UILabel.clicked += () =>
                         CellClicked(_sudokuCellData[currentCellNumber].UILabel as Button);
                     _sudokuCellData[cellNumber].UILabel.RegisterCallback<PointerEnterEvent>(CellEntered);
@@ -244,6 +247,7 @@ namespace AppDesign
                     }
                     else
                     {
+                        _currentButton.style.color = new StyleColor(new Color(0.08f, 0.08f, 0.08f, 1.0f));
                         _currentButton.style.backgroundColor = new StyleColor(new Color(0f, 0f, 0f, 0f));
                         _sudokuCellData[cellNumber].UILabel.parent.focusable = false;
                         _sudokuCellData[cellNumber].UILabel.clickable.activators.Clear();
@@ -265,11 +269,19 @@ namespace AppDesign
                         _blankCells--;
                         if(_blankCells < 1)
                         {
+                            _sudokuGameWon.visible = true;
+                            StartCoroutine(RemoveGameWon());
                             Debug.Log("Game Won!");
                         }
                     }
                 }
             }
+        }
+
+        private IEnumerator RemoveGameWon()
+        {
+            yield return new WaitForSeconds(5.0f);
+            _sudokuGameWon.visible = false;
         }
 
         private void CellClicked(Button clickedButton)
@@ -313,7 +325,7 @@ namespace AppDesign
         {
             if (evt.target is Button clickedButton)
             {
-                clickedButton.style.backgroundColor = new StyleColor(new Color(0.5f, 0.5f, 0.5f, 0.5f));
+                clickedButton.style.backgroundColor = new StyleColor(new Color(0.5f, 0.5f, 0.5f, 0.7f));
             }
         }
 
@@ -321,7 +333,7 @@ namespace AppDesign
         {
             if (evt.target is Button clickedButton)
             {
-                clickedButton.style.backgroundColor = new StyleColor(new Color(0.5f, 0.5f, 0.5f, 0.9f));
+                clickedButton.style.backgroundColor = new StyleColor(_blankCellColor);
             }
         }
 
@@ -332,6 +344,11 @@ namespace AppDesign
             {
                 sudokuError.visible = false; //SetEnabled(false);
             }
+        }
+
+        public void SetSudokuGameWon(VisualElement sudokuGameWon)
+        {
+            _sudokuGameWon = sudokuGameWon;
         }
     }
 }
