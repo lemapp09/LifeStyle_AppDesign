@@ -34,6 +34,8 @@ namespace AppDesign
         private TriviaManager _triviaManager;
         private QuoteManager _quoteManager;
         private MoneyManager _moneyManager;
+        private FunFactsManager _funFactManager;
+        private DrawingManager _drawingManager;
 
         // State & Data Containers
         private TextField _weatherSearch;
@@ -58,6 +60,13 @@ namespace AppDesign
         //Money
         private ScrollView _moneyScrollview;
         private Label _moneyLastUpdated;
+        
+        //Funfacts
+        private Label _funfactsText;
+        private Label _funfactsSource;
+        
+        // Drawing Pad
+        private VisualElement _drawingPad;
 
         void Awake()
         {
@@ -95,6 +104,8 @@ namespace AppDesign
             _sudokuManager = GetComponent<SudokuManager>() ?? gameObject.AddComponent<SudokuManager>();
             _quoteManager = GetComponent<QuoteManager>() ?? gameObject.AddComponent<QuoteManager>();
             _moneyManager = GetComponent<MoneyManager>() ?? gameObject.AddComponent<MoneyManager>();
+            _funFactManager = GetComponent<FunFactsManager>() ?? gameObject.AddComponent<FunFactsManager>();
+            _drawingManager = GetComponent<DrawingManager>() ?? gameObject.AddComponent<DrawingManager>();
 
             // Find UI containers
             _weatherSearch = root.Q<TextField>("WeatherSearchField");
@@ -166,7 +177,15 @@ namespace AppDesign
             _moneyScrollview = root.Q<ScrollView>("money-scrollview");
             _moneyLastUpdated = root.Q<Label>("money-update-time");
             _moneyManager.SetMoneyScrollview(_moneyScrollview, _moneyLastUpdated);
-
+            
+            _funfactsText = root.Q<Label>(className: "funfacts-text");
+            _funfactsSource = root.Q<Label>(className: "funfacts-source");
+            _funFactManager.SetLabels(_funfactsText,  _funfactsSource);
+            
+            _drawingPad = root.Q<VisualElement>(className: "drawing-pad");
+            _drawingManager.SetDrawingPad(_drawingPad);
+            _drawingManager.DrawingStart();
+            
             // Setup UI
             _structureElements.FindScreens(root, _mainScreen, _otherScreens);
             _structureElements.FindAppElements(root, _appElements, _wiggleEffect);
@@ -258,6 +277,10 @@ namespace AppDesign
                 else if (selectedScreen.name == "Screen08") // Trivia
                 {
                     _triviaManager.TriviaStart();
+                }
+                else if (selectedScreen.name == "Screen11") // Trivia
+                {
+                    _funFactManager.FunFactsStart();
                 }
             }
             else if (screenName == "MainScreen" && _mainScreen != null)

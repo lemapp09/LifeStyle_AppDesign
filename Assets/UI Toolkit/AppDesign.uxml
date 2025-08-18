@@ -342,12 +342,17 @@
         <ui:VisualElement name="Screen11" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/FunFacts.png?fileID=2800000&amp;guid=daa7c43a44f6e438c8735236bb0061a4&amp;type=3#FunFacts&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:ScrollView name="funfacts-scrollview" style="width: 950px; max-width: 950px; height: 60%; max-height: 60%; background-color: rgba(72, 145, 130, 0.57);">
+                <ui:Label text="Label" name="funfacts-text" class="funfacts-text" />
+                <ui:Label text="Label" name="funfacts-source" class="funfacts-source" />
+            </ui:ScrollView>
             <ui:Label name="BackButton11" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown11" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen12" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background12.jpg?fileID=2800000&amp;guid=1e316449c0c0c4c43a70c847dce9c211&amp;type=3#Background12&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Drawing.png?fileID=2800000&amp;guid=af696cc730a754cd9a91fd8b2ba44952&amp;type=3#Drawing&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:VisualElement name="drawing-pad" class="drawing-pad" />
             <ui:Label name="BackButton12" tooltip="Back" class="back-button" />
             <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown12" class="navigation-dropdown" />
         </ui:VisualElement>

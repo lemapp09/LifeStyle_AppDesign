@@ -42,12 +42,26 @@ namespace AppDesign
             UpdateScoreDisplay();
         }
 
+        /// <summary>
+        /// Loads a random, unique set of textures for the game pieces.
+        /// The number of unique textures loaded is determined by the _gridSize.
+        /// </summary>
         private IEnumerator LoadPieceTextures()
         {
+            // Clear the list to ensure a fresh set of textures is loaded each time.
             _pieceTextures.Clear();
             var random = new System.Random();
-            var textureNumbers = Enumerable.Range(1, 78).OrderBy(x => random.Next()).Take(_gridSize).ToList();
 
+            // 1. Create a sequence of integers from 1 to 12.
+            // 2. Order them randomly.
+            // 3. Take a number of textures equal to the grid size.
+            // This process guarantees that the selected texture numbers are unique.
+            var textureNumbers = Enumerable.Range(1, 12)
+                .OrderBy(x => random.Next())
+                .Take(_gridSize)
+                .ToList();
+
+            // Iterate through the list of unique numbers and load the corresponding textures.
             foreach (var num in textureNumbers)
             {
                 var textureRequest = Resources.LoadAsync<Texture2D>($"Match3/Element{num:D2}");
