@@ -13,7 +13,7 @@ namespace AppDesign
         private int _currentErrors = 0;
         private static int _cluesToKeep = 0;
         private int _blankCells;
-        private bool _gameBegun = false;
+        private bool _gameBegun;
         private SudokuDifficulty _currentDiffLevel = SudokuDifficulty.Easy;
         private int _currentNumberSelected = 0;
         private Button _currentButton;

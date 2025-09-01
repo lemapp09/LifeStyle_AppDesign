@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3" />
+    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3#AppDesign" />
     <ui:VisualElement name="Background" class="background">
         <ui:VisualElement name="MainScreen" class="MainScreenTemplate">
             <ui:VisualElement name="TopClearRow" class="TopClearRow" />
@@ -410,22 +410,29 @@
         <ui:VisualElement name="Screen14" class="ScreenTemplate" style="display: flex; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen14.png?fileID=2800000&amp;guid=e00ce3b54369b4c829e1dc8b87dfddb1&amp;type=3#Screen14&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
-            <ui:VisualElement name="simon_gameBoard" class="simon_gameBoard" style="flex-direction: column;">
-                <ui:VisualElement name="simon_firstRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
-                    <ui:Button name="simon_gameTile01" class="simon_gameTile" />
-                    <ui:Button name="simon_gameTile02" class="simon_gameTile" />
-                    <ui:Button name="simon_gameTile03" class="simon_gameTile" />
+            <ui:VisualElement name="simon_gameBoard" picking-mode="Ignore" class="simon_gameBoard" style="flex-direction: column;">
+                <ui:VisualElement name="simon_firstRow" picking-mode="Ignore" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
+                    <ui:VisualElement name="empty_space" style="flex-grow: 1;" />
+                    <ui:Button name="simon_gameTile01" class="simon_gameTile" style="background-color: rgb(57, 204, 204); background-image: url(&quot;project://database/Assets/Art/Textures/simon_01.png?fileID=2800000&amp;guid=a084a7abe79584d3eb6ef112857ca806&amp;type=3#simon_01&quot;); -unity-background-image-tint-color: rgb(57, 204, 204);" />
+                    <ui:Button name="simon_gameTile02" class="simon_gameTile" style="background-color: rgb(255, 133, 27); -unity-background-image-tint-color: rgb(255, 133, 27); background-image: url(&quot;project://database/Assets/Art/Textures/simon_02.png?fileID=2800000&amp;guid=93ae1fdb49f7c403e80a36a014e4c8f8&amp;type=3#simon_02&quot;);" />
+                    <ui:Button name="simon_gameTile03" class="simon_gameTile" style="background-color: rgb(240, 18, 190); -unity-background-image-tint-color: rgb(240, 18, 190); background-image: url(&quot;project://database/Assets/Art/Textures/simon_03.png?fileID=2800000&amp;guid=37c67ff0d0ae3486fb3293b28bbe8e2d&amp;type=3#simon_03&quot;);" />
+                    <ui:VisualElement name="empty_space" style="flex-grow: 1;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="simon_secondRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
-                    <ui:Button name="simon_gameTile04" class="simon_gameTile" />
-                    <ui:Button name="simon_gameTile05" class="simon_gameTile" />
-                    <ui:Button name="simon_gameTile06" class="simon_gameTile" />
+                <ui:VisualElement name="simon_secondRow" picking-mode="Ignore" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
+                    <ui:VisualElement name="empty_space" style="flex-grow: 1;" />
+                    <ui:Button name="simon_gameTile04" class="simon_gameTile" style="background-color: rgb(46, 204, 64); -unity-background-image-tint-color: rgb(46, 204, 64); background-image: url(&quot;project://database/Assets/Art/Textures/simon_04.png?fileID=2800000&amp;guid=36633fa54d14949448b5397b08341020&amp;type=3#simon_04&quot;);" />
+                    <ui:Button name="simon_gameTile05" class="simon_gameTile" style="background-color: rgb(141, 85, 36); -unity-background-image-tint-color: rgb(141, 85, 36); background-image: url(&quot;project://database/Assets/Art/Textures/simon_05.png?fileID=2800000&amp;guid=811d7829a11544b73be363f805c68d8f&amp;type=3#simon_05&quot;);" />
+                    <ui:Button name="simon_gameTile06" class="simon_gameTile" style="background-color: rgb(0, 116, 217); -unity-background-image-tint-color: rgb(0, 116, 217); background-image: url(&quot;project://database/Assets/Art/Textures/simon_06.png?fileID=2800000&amp;guid=1c40f29ed7b164497a38b4ff4cb47612&amp;type=3#simon_06&quot;);" />
+                    <ui:VisualElement name="empty_space" style="flex-grow: 1;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="simon_thirdRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
-                    <ui:Button name="simon_gameTile07" class="simon_gameTile" />
-                    <ui:Button name="simon_gameTile08" class="simon_gameTile" />
-                    <ui:Button name="simon_gameTile09" class="simon_gameTile" />
+                <ui:VisualElement name="simon_thirdRow" picking-mode="Ignore" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
+                    <ui:VisualElement name="empty_space" style="flex-grow: 1;" />
+                    <ui:Button name="simon_gameTile07" class="simon_gameTile" style="background-color: rgb(177, 13, 201); -unity-background-image-tint-color: rgb(177, 13, 201); background-image: url(&quot;project://database/Assets/Art/Textures/simon_07.png?fileID=2800000&amp;guid=0d156f51c446e41f1a263bb4f466e457&amp;type=3#simon_07&quot;);" />
+                    <ui:Button name="simon_gameTile08" class="simon_gameTile" style="background-color: rgb(255, 220, 0); -unity-background-image-tint-color: rgb(255, 220, 0); background-image: url(&quot;project://database/Assets/Art/Textures/simon_08.png?fileID=2800000&amp;guid=683067a61f64c4bf2a1e465265b21121&amp;type=3#simon_08&quot;);" />
+                    <ui:Button name="simon_gameTile09" class="simon_gameTile" style="background-color: rgb(255, 65, 54); -unity-background-image-tint-color: rgb(255, 65, 54); background-image: url(&quot;project://database/Assets/Art/Textures/simon_09.png?fileID=2800000&amp;guid=2b3e4ece288ac44db9559d83e9240845&amp;type=3#simon_09&quot;);" />
+                    <ui:VisualElement name="empty_space" style="flex-grow: 1;" />
                 </ui:VisualElement>
+                <ui:Label text="Your Turn" name="simon_playerTurnLabel" class="simon_playerTurnLabel" />
             </ui:VisualElement>
             <ui:Button text="START" name="simon_startButton" selectable="true" class="simon_startButton" />
             <ui:Label name="BackButton14" tooltip="Back" class="back-button" />

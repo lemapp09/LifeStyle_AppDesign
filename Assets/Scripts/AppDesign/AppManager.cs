@@ -79,6 +79,7 @@ namespace AppDesign
         private VisualElement simon_gameBoard;
         private Button simon_startButton;
         private List<Button> simon_gameTiles;
+        private Label simon_playerTurnLabel;
 
         void Awake()
         {
@@ -236,7 +237,8 @@ namespace AppDesign
             simon_gameBoard = root.Q<VisualElement>("simon_gameBoard");
             simon_startButton = root.Q<Button>("simon_startButton");
             simon_gameTiles = root.Query<Button>(className: "simon_gameTile").ToList();
-            _simonGameManager.SetGameElements(simon_gameBoard, simon_startButton, simon_gameTiles);
+            simon_playerTurnLabel = root.Q<Label>("simon_playerTurnLabel");
+            _simonGameManager.SetGameElements(simon_gameBoard, simon_startButton, simon_gameTiles, simon_playerTurnLabel);
             #endregion
             
             // Setup UI
