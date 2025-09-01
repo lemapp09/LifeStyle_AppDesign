@@ -28,7 +28,6 @@ namespace AppDesign
                 {
                     // Get the JSON string from the web request
                     string jsonText = webRequest.downloadHandler.text;
-                    Debug.Log($"Received JSON: {jsonText}");
 
                     try
                     {

@@ -52,28 +52,98 @@ VisualElement {
     min-height: 5%;
 }
 
+.main_scrollView {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: transparent;
+}
+
+.main_scrollView .unity-scroller--vertical {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.main_scrollView .unity-slider {
+    width: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.main_scrollView .unity-base-slider__tracker {
+    width: 50px;
+    background-color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/Art/App%20Design/gradientSlider02.png?fileID=2800000&guid=328e4652a0b2d4c6e85da21942317228&type=3#gradientSlider02");
+}
+
+.main_scrollView .unity-base-slider__dragger {
+    width: 50px;
+    background-color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/Art/App%20Design/gradientSlider.png?fileID=2800000&guid=50a3d6f9936cc430db6735ea25046d93&type=3#gradientSlider");
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.main_scrollView .unity-scroller__low-button {
+    background-color: teal;
+    -unity-background-image-tint-color: white;
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.main_scrollView .unity-scroller__high-button {
+    background-color: teal;
+    -unity-background-image-tint-color: white;
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
 .FirstRow {
     flex-grow: 1;
     flex-direction: row;
     justify-content: space-evenly;
+    width: auto;
+    max-width: none;
+    height: 300px;
+    min-height: auto;
 }
 
 .FirstLeftElement {
     background-image: url("project://database/Assets/Art/App%20Design/AppItem01.png?fileID=2800000&guid=ead3196e39aac466eb0acb74d023bcaa&type=3#AppItem01");
+    height: 100%;
+    max-height: 100%;
+    flex-grow: 1;
+    background-size: contain;
 }
 
 .FirstCenterElement {
     background-image: url("project://database/Assets/Art/App%20Design/AppItem02.png?fileID=2800000&guid=66fa0f394c0b6404ea6fa2769a4cc941&type=3#AppItem02");
+    background-size: contain;
 }
 
 .FirstRightElement {
     background-image: url("project://database/Assets/Art/App%20Design/AppItem03.png?fileID=2800000&guid=e92858adc76ea470f9cd95f1af484a25&type=3#AppItem03");
+    flex-grow: initial;
+    background-size: contain;
 }
 
 .SecondRow {
     flex-grow: 1;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 300px;
 }
 
 .SecondLeftElement {
@@ -92,6 +162,7 @@ VisualElement {
     flex-grow: 1;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 300px;
 }
 
 .ThirdLeftElement {
@@ -110,6 +181,7 @@ VisualElement {
     flex-grow: 1;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 300px;
 }
 
 .FourthLeftElement {
@@ -121,6 +193,63 @@ VisualElement {
 }
 
 .FourthRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem12.png?fileID=2800000&guid=281c6671d6cb84353a6f6ce2a2b4f808&type=3#AppItem12");
+}
+
+.FifthRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.FifthLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem13.png?fileID=2800000&guid=0854cb460b0574d9287da89dd19f0a25&type=3#AppItem13");
+}
+
+.FifthCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem14.png?fileID=2800000&guid=b39c31e677df140fbbc079a16dcc89ed&type=3#AppItem14");
+}
+
+.FifthRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem12.png?fileID=2800000&guid=281c6671d6cb84353a6f6ce2a2b4f808&type=3#AppItem12");
+}
+
+.SixthRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.SixthLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem10.png?fileID=2800000&guid=4b5648eee82574019a44ed4efa87ab48&type=3#AppItem10");
+}
+
+.SixthCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem11.png?fileID=2800000&guid=43f1d882ab30f48a5bc5007905848b27&type=3#AppItem11");
+}
+
+.SixthRightElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem12.png?fileID=2800000&guid=281c6671d6cb84353a6f6ce2a2b4f808&type=3#AppItem12");
+}
+
+.SeventhRow {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.SeventhLeftElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem10.png?fileID=2800000&guid=4b5648eee82574019a44ed4efa87ab48&type=3#AppItem10");
+}
+
+.SeventhCenterElement {
+    background-image: url("project://database/Assets/Art/App%20Design/AppItem11.png?fileID=2800000&guid=43f1d882ab30f48a5bc5007905848b27&type=3#AppItem11");
+}
+
+.SeventhRightElement {
     background-image: url("project://database/Assets/Art/App%20Design/AppItem12.png?fileID=2800000&guid=281c6671d6cb84353a6f6ce2a2b4f808&type=3#AppItem12");
 }
 
@@ -165,11 +294,17 @@ VisualElement {
     border-radius: 25px;
     color: black;
     background-color: rgba(152, 114, 114, 0);
+    background-image: url("project://database/Assets/Art/App%20Design/gradientDropdown01.png?fileID=2800000&guid=dbbc8290289b74e5b931a2f6952a566a&type=3#gradientDropdown01");
 }
 
 .navigation-dropdown .unity-base-field__input {
     color: rgb(59, 89, 90);
     padding-left: 8px;
+    background-image: url("project://database/Assets/Art/App%20Design/gradientDropdown01.png?fileID=2800000&guid=dbbc8290289b74e5b931a2f6952a566a&type=3#gradientDropdown01");
+}
+
+.navigation-dropdown .unity-base-popfield-field__text {
+    background-image: url("project://database/Assets/Art/App%20Design/gradientDropdown01.png?fileID=2800000&guid=dbbc8290289b74e5b931a2f6952a566a&type=3#gradientDropdown01");
 }
 
 .weather-container {
@@ -838,7 +973,7 @@ VisualElement {
     -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
     font-size: 72px;
     color: rgb(255, 255, 255);
-    white-space: pre-wrap;
+    white-space: normal;
 }
 
 .funfacts-source {
@@ -854,4 +989,99 @@ VisualElement {
     height: 60%;
     max-height: 60%;
     background-color: rgb(255, 255, 255);
+    background-image: resource('blankCanvas');
+}
+
+.draw-brush-selector {
+    width: 275px;
+    max-width: 275px;
+    height: 50%;
+    max-height: 50%;
+    font-size: 36px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Bold');
+}
+
+.draw-color-selector {
+    width: 275px;
+    max-width: 275px;
+    height: 50%;
+    max-height: 50%;
+    font-size: 36px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Bold');
+}
+
+.draw-clear-button {
+    width: 275px;
+    max-width: 275px;
+    background-color: rgb(195, 132, 91);
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    border-bottom-left-radius: 75px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Black');
+    font-size: 48px;
+    height: 50%;
+    max-height: 50%;
+}
+
+.response_gameSpace {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 90%;
+    height: 70%;
+    max-height: 70%;
+}
+
+.response_gameDot {
+    background-color: rgb(11, 243, 0);
+    width: 120px;
+    height: 120px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+}
+
+.simon_gameBoard {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 90%;
+    height: 55%;
+    max-height: 55%;
+    align-self: auto;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column-reverse;
+    align-content: auto;
+}
+
+.simon_startButton {
+    background-color: rgb(43, 87, 77);
+    color: rgb(255, 255, 255);
+    font-size: 48px;
+    -unity-font-definition: resource('FlatSkin/Font/Roboto-Bold');
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+}
+
+.simon_gameTile {
+    width: 300px;
+    max-width: 300px;
+    height: 300px;
+    max-height: 300px;
+    background-color: rgb(255, 255, 255);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 35px;
 }

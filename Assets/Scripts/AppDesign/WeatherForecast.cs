@@ -9,7 +9,6 @@ namespace AppDesign
         public class WeatherRoot
         {
             public Current current;
-            public FilePathAttribute.Location location;
         }
 
         [Serializable]

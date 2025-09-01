@@ -1,10 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Networking;
-using System.Text.RegularExpressions;
-using System.Linq;
 
 namespace AppDesign
 {
@@ -13,7 +9,7 @@ namespace AppDesign
         // UI Elements
         private List<VisualElement> _appElements = new List<VisualElement>();
         private List<VisualElement> _otherScreens = new List<VisualElement>();
-        private VisualElement _mainScreen;
+        private VisualElement _mainScreen ;
         private List<DropdownField> _navigationDropdowns = new List<DropdownField>();
         private List<VisualElement> _backButtons = new List<VisualElement>();
 
@@ -36,6 +32,8 @@ namespace AppDesign
         private MoneyManager _moneyManager;
         private FunFactsManager _funFactManager;
         private DrawingManager _drawingManager;
+        private ResponseGameManager _responseGameManager;
+        private SimonGameManager _simonGameManager;
 
         // State & Data Containers
         private TextField _weatherSearch;
@@ -67,17 +65,33 @@ namespace AppDesign
         
         // Drawing Pad
         private VisualElement _drawingPad;
+        private DropdownField _drawBrushSelector;
+        private DropdownField _drawColorSelector;
+        private Button _drawClearButton;
+        
+        // Response Game
+        private VisualElement response_gameArea;
+        private VisualElement response_gameDot;
+        private Label response_slowTimeLabel, response_fastestTimeLabel, response_averageTimeLabel;
+        private Button response_startButton;
+        
+        // Simon Game
+        private VisualElement simon_gameBoard;
+        private Button simon_startButton;
+        private List<Button> simon_gameTiles;
 
         void Awake()
         {
             _uiDocument = GetComponent<UIDocument>();
-            if (_uiDocument == null)
+            if (!_uiDocument)
             {
                 Debug.LogError("No UIDocument component found on this GameObject.");
                 return;
             }
 
             var root = _uiDocument.rootVisualElement;
+            _mainScreen = new VisualElement();
+            _otherScreens = new List<VisualElement>();
 
             // Initialize components
             _wiggleEffect = GetComponent<WiggleEffect>() ?? gameObject.AddComponent<WiggleEffect>();
@@ -106,24 +120,33 @@ namespace AppDesign
             _moneyManager = GetComponent<MoneyManager>() ?? gameObject.AddComponent<MoneyManager>();
             _funFactManager = GetComponent<FunFactsManager>() ?? gameObject.AddComponent<FunFactsManager>();
             _drawingManager = GetComponent<DrawingManager>() ?? gameObject.AddComponent<DrawingManager>();
+            _responseGameManager = GetComponent<ResponseGameManager>() ?? gameObject.AddComponent<ResponseGameManager>();
+            _simonGameManager = GetComponent<SimonGameManager>() ?? gameObject.AddComponent<SimonGameManager>();
 
             // Find UI containers
+            #region Weather
             _weatherSearch = root.Q<TextField>("WeatherSearchField");
             _weatherSubmitButton = root.Q<Label>("WeatherSubmitButton");
-            if (_weatherSubmitButton != null)
+            _weatherSubmitButton?.RegisterCallback<PointerUpEvent>(evt =>
             {
-                _weatherSubmitButton.RegisterCallback<PointerUpEvent>(evt =>
-                {
-                    StartCoroutine(_weatherManager.GetWeather(_weatherSearch.value));
-                });
-            }
+                StartCoroutine(_weatherManager.GetWeather(_weatherSearch.value));
+            });
 
             _weatherContainer = root.Q<VisualElement>("WeatherContainer");
             _weatherUIManager.SetWeatherContainer(_weatherContainer);
+            #endregion Weather
+            
+            #region News
             _newsContainer = root.Q<VisualElement>("NewsContainer");
             _newsUIManager.SetNewsContainer(_newsContainer);
-            _sportsContainer = root.Q<VisualElement>("sports-scrollview");
+            #endregion News
             
+            #region Sports
+            _sportsContainer = root.Q<VisualElement>("sports-scrollview");
+            _sportsUIManager.SetSportsContainer(_sportsContainer);
+            #endregion Sports
+
+            #region Sudoku
             //Sudoku Set-up
             for (int i = 0; i < _sudokuCellData.Length; i++)
             {
@@ -164,40 +187,65 @@ namespace AppDesign
             _sudokuManager.SetSudokuGameWon(_sudokuGameWon);
 
             _sudokuManager.SetSudokuCellData(_sudokuCellData);
-            
+            #endregion Sudoku
+
+            #region Trivia
             _triviaScrollView = root.Q<ScrollView>("trivia-scrollview");
             _triviaManager.SetTriviaScrollview(_triviaScrollView);
+            #endregion
             
+            #region Quote
             _quoteDropCap = root.Q<Label>(className:"quote-drop-cap");
             _quoteRestOfText = root.Q<Label>(className:"quote-restOfText");
             _quoteAuthor = root.Q<Label>(className:"quote-author");
             _quoteManager.SetUIElements(_quoteDropCap, _quoteRestOfText, _quoteAuthor);
             _quoteManager.QuoteStart();
+            #endregion
             
+            #region Money
             _moneyScrollview = root.Q<ScrollView>("money-scrollview");
             _moneyLastUpdated = root.Q<Label>("money-update-time");
             _moneyManager.SetMoneyScrollview(_moneyScrollview, _moneyLastUpdated);
+            #endregion
             
+            #region FunFacts
             _funfactsText = root.Q<Label>(className: "funfacts-text");
             _funfactsSource = root.Q<Label>(className: "funfacts-source");
             _funFactManager.SetLabels(_funfactsText,  _funfactsSource);
+            #endregion
             
+            #region Drawing Pad
             _drawingPad = root.Q<VisualElement>(className: "drawing-pad");
-            _drawingManager.SetDrawingPad(_drawingPad);
-            _drawingManager.DrawingStart();
+            _drawBrushSelector = root.Q<DropdownField>(className: "draw-brush-selector");
+            _drawColorSelector = root.Q<DropdownField>(className: "draw-color-selector");
+            _drawClearButton = root.Q<Button>(className: "draw-clear-button");
+            _drawingManager.SetDrawingElements(_drawingPad,_drawBrushSelector, _drawColorSelector, _drawClearButton );
+            #endregion Drawing Pad
+
+            #region Response Game
+            response_gameArea = root.Q<VisualElement>("response_gameSpace");
+            response_gameDot = root.Q<Button>("response_gameDot");
+            response_slowTimeLabel = root.Q<Label>("response_slowestScore");
+            response_fastestTimeLabel = root.Q<Label>("response_fastestScore");
+            response_averageTimeLabel = root.Q<Label>("response_averageScore");
+            response_startButton = root.Q<Button>("response_startButton");
+            _responseGameManager.SetResponseGameElements(response_gameArea, response_gameDot, response_slowTimeLabel, response_fastestTimeLabel, response_averageTimeLabel, response_startButton);
+            #endregion 
+            
+            #region Simon Game
+            simon_gameBoard = root.Q<VisualElement>("simon_gameBoard");
+            simon_startButton = root.Q<Button>("simon_startButton");
+            simon_gameTiles = root.Query<Button>(className: "simon_gameTile").ToList();
+            _simonGameManager.SetGameElements(simon_gameBoard, simon_startButton, simon_gameTiles);
+            #endregion
             
             // Setup UI
             _structureElements.FindScreens(root, _mainScreen, _otherScreens);
             _structureElements.FindAppElements(root, _appElements, _wiggleEffect);
             _structureElements.AssignScreensToAppElements( _appElements,_otherScreens, this);
-            SetUpSportsContainers();
+            
             _structureElements.SetupBackButtons(_backButtons, _otherScreens, this, _wiggleEffect);
             _structureElements.SetupNavigationDropdowns(root, _navigationDropdowns ,_otherScreens, this);
-        }
-
-        private void SetUpSportsContainers()
-        {
-            // 
         }
 
         public void ShowScreen(string screenName)
@@ -281,6 +329,10 @@ namespace AppDesign
                 else if (selectedScreen.name == "Screen11") // Trivia
                 {
                     _funFactManager.FunFactsStart();
+                }
+                else if (selectedScreen.name == "Screen12") // Drawing Pad
+                {
+                    _drawingManager.DrawingStart();
                 }
             }
             else if (screenName == "MainScreen" && _mainScreen != null)

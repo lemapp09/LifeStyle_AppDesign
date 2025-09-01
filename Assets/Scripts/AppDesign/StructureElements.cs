@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -26,9 +27,9 @@ namespace AppDesign
                 Debug.LogError("MainScreen not found. Ensure it has the name 'MainScreen'.");
             }
 
-            if (_otherScreens.Count != 12)
+            if (_otherScreens.Count != 21)
             {
-                Debug.LogWarning($"Expected 12 non-main screens, found {_otherScreens.Count}.");
+                Debug.LogWarning($"Expected 21 non-main screens, found {_otherScreens.Count}.");
             }
         }
 
@@ -84,6 +85,7 @@ namespace AppDesign
                         _appManager.ShowScreen(_otherScreens[selectedIndex].name);
                     }
                 });
+                dropdown.choices = "Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad, Response Game, Screen 14, Screen 15, Screen 16, Screen 17, Screen 18, Screen 19, Screen 20, Screen 21".Split(',').ToList();
             });
         }
     }

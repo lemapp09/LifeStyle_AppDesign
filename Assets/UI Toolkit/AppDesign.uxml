@@ -1,28 +1,45 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3#AppDesign" />
+    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3" />
     <ui:VisualElement name="Background" class="background">
         <ui:VisualElement name="MainScreen" class="MainScreenTemplate">
             <ui:VisualElement name="TopClearRow" class="TopClearRow" />
-            <ui:VisualElement name="FirstRow" class="FirstRow">
-                <ui:VisualElement name="FirstLeftElement" class="FirstLeftElement appElement" />
-                <ui:VisualElement name="FirstCenterElement" class="FirstCenterElement appElement" />
-                <ui:VisualElement name="FirstRightElement" class="FirstRightElement appElement" />
-            </ui:VisualElement>
-            <ui:VisualElement name="SecondRow" class="SecondRow">
-                <ui:VisualElement name="SecondLeftElement" class="SecondLeftElement appElement" />
-                <ui:VisualElement name="SecondCenterElement" class="SecondCenterElement appElement" />
-                <ui:VisualElement name="SecondRightElement" class="SecondRightElement appElement" />
-            </ui:VisualElement>
-            <ui:VisualElement name="ThirdRow" class="ThirdRow">
-                <ui:VisualElement name="ThirdLeftElement" class="ThirdLeftElement appElement" />
-                <ui:VisualElement name="ThirdCenterElement" class="ThirdCenterElement appElement" />
-                <ui:VisualElement name="ThirdRightElement" class="ThirdRightElement appElement" />
-            </ui:VisualElement>
-            <ui:VisualElement name="FourthRow" class="FourthRow">
-                <ui:VisualElement name="FourthLeftElement" class="FourthLeftElement appElement" />
-                <ui:VisualElement name="FourthCenterElement" class="FourthCenterElement appElement" />
-                <ui:VisualElement name="FourthRightElement" class="FourthRightElement appElement" />
-            </ui:VisualElement>
+            <ui:ScrollView name="main_scrollView" class="main_scrollView">
+                <ui:VisualElement name="FirstRow" class="FirstRow">
+                    <ui:VisualElement name="FirstLeftElement" class="FirstLeftElement appElement" />
+                    <ui:VisualElement name="FirstCenterElement" class="FirstCenterElement appElement" />
+                    <ui:VisualElement name="FirstRightElement" class="FirstRightElement appElement" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SecondRow" class="SecondRow">
+                    <ui:VisualElement name="SecondLeftElement" class="SecondLeftElement appElement" />
+                    <ui:VisualElement name="SecondCenterElement" class="SecondCenterElement appElement" />
+                    <ui:VisualElement name="SecondRightElement" class="SecondRightElement appElement" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ThirdRow" class="ThirdRow">
+                    <ui:VisualElement name="ThirdLeftElement" class="ThirdLeftElement appElement" />
+                    <ui:VisualElement name="ThirdCenterElement" class="ThirdCenterElement appElement" />
+                    <ui:VisualElement name="ThirdRightElement" class="ThirdRightElement appElement" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FourthRow" class="FourthRow">
+                    <ui:VisualElement name="FourthLeftElement" class="FourthLeftElement appElement" />
+                    <ui:VisualElement name="FourthCenterElement" class="FourthCenterElement appElement" />
+                    <ui:VisualElement name="FourthRightElement" class="FourthRightElement appElement" />
+                </ui:VisualElement>
+                <ui:VisualElement name="FifthRow" class="FifthRow">
+                    <ui:VisualElement name="FifthLeftElement" class="FifthLeftElement appElement" />
+                    <ui:VisualElement name="FifthCenterElement" class="FifthCenterElement appElement" />
+                    <ui:VisualElement name="FifthRightElement" class="FifthRightElement appElement" style="background-color: rgba(255, 255, 255, 0); background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem15.png?fileID=2800000&amp;guid=160152e53282b41479f8358cf8033158&amp;type=3#AppItem15&quot;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SixthRow" class="SixthRow">
+                    <ui:VisualElement name="SixthLeftElement" class="SixthLeftElement appElement" style="background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem16.png?fileID=2800000&amp;guid=76c503dae47124833bc49232d775d362&amp;type=3#AppItem16&quot;);" />
+                    <ui:VisualElement name="SixthCenterElement" class="SixthCenterElement appElement" style="background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem17.png?fileID=2800000&amp;guid=80c7f0a19eecf44e49dca43850a2ebea&amp;type=3#AppItem17&quot;);" />
+                    <ui:VisualElement name="SixthRightElement" class="SixthRightElement appElement" style="background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem18.png?fileID=2800000&amp;guid=16fc1a69d500b4834a29a94cf064734b&amp;type=3#AppItem18&quot;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="SeventhRow" class="SeventhRow">
+                    <ui:VisualElement name="SeventhLeftElement" class="SeventhLeftElement appElement" style="background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem19.png?fileID=2800000&amp;guid=df705f4a39a8d407ea923845c577d6b4&amp;type=3#AppItem19&quot;);" />
+                    <ui:VisualElement name="SeventhCenterElement" class="SeventhCenterElement appElement" style="background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem20.png?fileID=2800000&amp;guid=2cdae9fe723cf4c72a93a9daf8167d10&amp;type=3#AppItem20&quot;);" />
+                    <ui:VisualElement name="SeventhRightElement" class="SeventhRightElement appElement" style="background-image: url(&quot;project://database/Assets/Art/App%20Design/AppItem21.png?fileID=2800000&amp;guid=1926382ee756e4b5a8e6a198c95fd3d7&amp;type=3#AppItem21&quot;);" />
+                </ui:VisualElement>
+            </ui:ScrollView>
             <ui:VisualElement name="BottomRow" class="BottomRow">
                 <ui:VisualElement name="LeftElement" style="flex-grow: 1;" />
                 <ui:VisualElement name="CenterElement" style="flex-grow: 1;" />
@@ -40,7 +57,7 @@
             </ui:VisualElement>
             <ui:ScrollView name="WeatherContainer" class="weather-container" style="align-items: flex-start;" />
             <ui:Label name="BackButton01" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown01" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown01" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen02" class="ScreenTemplate ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background02.jpg?fileID=2800000&amp;guid=06ac2db88fb4b4559aefa6afeb2fb43a&amp;type=3#Background02&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -49,7 +66,7 @@
             <ui:TextField name="ShowSearchField" placeholder="Search for a TV show..." value="Enter Search Term Here" class="show-search-field" />
             <ui:ScrollView name="ShowList" class="show-list" />
             <ui:Label name="BackButton02" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown02" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown02" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen03" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background03.jpg?fileID=2800000&amp;guid=998d296e969034a8481552a4e428c0a3&amp;type=3#Background03&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -58,14 +75,14 @@
                 <ui:ScrollView name="sports-scrollview" class="sports-scrollview" />
             </ui:VisualElement>
             <ui:Label name="BackButton03" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown03" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown03" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen04" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background04.jpg?fileID=2800000&amp;guid=399f845a0c42b4177b5c4bcecf10e1a1&amp;type=3#Background04&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/News.png?fileID=2800000&amp;guid=44b6e5d93f83c4cbc90f03d85c61c21f&amp;type=3#News&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 15%; max-height: 15%;" />
             <ui:ScrollView name="NewsContainer" class="news-container" />
             <ui:Label name="BackButton04" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown04" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown04" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen05" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background05.jpg?fileID=2800000&amp;guid=750f2351ebd874734916dd8d5d6fc353&amp;type=3#Background05&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -89,7 +106,7 @@
             </ui:VisualElement>
             <ui:Label text="Player: 0 - Computer: 0" name="ScoreLabel" class="score-label" />
             <ui:Button text="Reset" name="ResetButton" class="reset-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown05" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown05" class="navigation-dropdown" />
             <ui:Label name="BackButton05" tooltip="Back" class="back-button" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen06" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background06.jpg?fileID=2800000&amp;guid=27dac0a7c17994607a8183a7c29c7cda&amp;type=3#Background06&quot;);">
@@ -105,7 +122,7 @@
                 <ui:VisualElement name="Match3Grid" class="match3-grid" />
                 <ui:Label text="Score: 0" name="Match3ScoreLabel" class="score-label" />
             </ui:VisualElement>
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown06" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown06" class="navigation-dropdown" />
             <ui:Label name="BackButton06" tooltip="Back" class="back-button" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen07" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background07.jpg?fileID=2800000&amp;guid=173987c71d7bd4f6dbaf26e09b3548ad&amp;type=3#Background07&quot;);">
@@ -301,7 +318,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="GameWon" class="sudoku-game-won" />
             <ui:Label name="BackButton07" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown07" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown07" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen08" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background08.jpg?fileID=2800000&amp;guid=13e57ab347651423a952ae0b3791e6d1&amp;type=3#Background08&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -311,7 +328,7 @@
                 <ui:Button text="RESET" name="trivia-reset-button" style="-unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); font-size: 36px; background-color: rgb(219, 121, 38); border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; margin-top: 35px;" />
             </ui:VisualElement>
             <ui:Label name="BackButton08" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown08" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown08" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen09" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background01.jpg?fileID=2800000&amp;guid=2a767094b550a47bbb0a942b856e6dd6&amp;type=3#Background01&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -326,7 +343,7 @@
                 </ui:VisualElement>
             </ui:ScrollView>
             <ui:Label name="BackButton09" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown09" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown09" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen10" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background10.jpg?fileID=2800000&amp;guid=38c390624240b4167875d29c1c676af8&amp;type=3#Background10&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -337,7 +354,7 @@
                 <ui:Label text="12:00:00AM" name="money-update-time" class="money-update-time" />
             </ui:VisualElement>
             <ui:Label name="BackButton10" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown10" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown10" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen11" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -347,14 +364,114 @@
                 <ui:Label text="Label" name="funfacts-source" class="funfacts-source" />
             </ui:ScrollView>
             <ui:Label name="BackButton11" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown11" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown11" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen12" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background12.jpg?fileID=2800000&amp;guid=1e316449c0c0c4c43a70c847dce9c211&amp;type=3#Background12&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Drawing.png?fileID=2800000&amp;guid=af696cc730a754cd9a91fd8b2ba44952&amp;type=3#Drawing&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
             <ui:VisualElement name="drawing-pad" class="drawing-pad" />
+            <ui:VisualElement name="selection-row" style="flex-grow: 1; flex-direction: row; width: 950px; max-width: 950px; height: 5%; max-height: 10%; margin-top: 25px;">
+                <ui:VisualElement name="sizeSelector" style="flex-grow: 1;">
+                    <ui:Label text="Brush Size" style="font-size: 36px; color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+                    <ui:DropdownField name="draw-brush-selector" class="draw-brush-selector" />
+                </ui:VisualElement>
+                <ui:VisualElement name="colorSelector" style="flex-grow: 1;">
+                    <ui:Label text="Color Select" selectable="true" focusable="true" parse-escape-sequences="true" style="font-size: 36px; color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+                    <ui:DropdownField name="draw-color-selector" class="draw-color-selector" />
+                </ui:VisualElement>
+                <ui:VisualElement name="clearButton" style="flex-grow: 1;">
+                    <ui:VisualElement style="flex-grow: 1; height: 20%; max-height: 20%;" />
+                    <ui:Button text="Clear" name="draw-clear-button" class="draw-clear-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
             <ui:Label name="BackButton12" tooltip="Back" class="back-button" />
-            <ui:DropdownField choices="Weather,TV Shows,Sports,News,Tic-Tac-Toe,Match 3,Sudoku,Trivia Quiz,Daily Quote,Money,Fun Facts,Drawing Pad" index="0" name="Navigation-Dropdown12" class="navigation-dropdown" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown12" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen13" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen13.png?fileID=2800000&amp;guid=58ce4eacfa8404bd2837bc734f69d215&amp;type=3#Screen13&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:VisualElement name="response_gameSpace" class="response_gameSpace">
+                <ui:Button name="response_gameDot" class="response_gameDot" />
+            </ui:VisualElement>
+            <ui:VisualElement name="response_HUD" picking-mode="Ignore" style="flex-grow: 1; width: 90%; max-width: 90%; height: 7%; max-height: 7%; flex-direction: row;">
+                <ui:VisualElement name="response_scores" style="flex-grow: 1; width: 50%; max-width: 50%; height: 100%; max-height: 100%;">
+                    <ui:Label text="Fastest Time:" name="response_fastestScore" style="width: 100%; height: 33%; max-width: 100%; max-height: 33%; color: rgb(255, 255, 255); -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); font-size: 28px;" />
+                    <ui:Label text="Average Time:&#10;" name="response_averageScore" style="width: 100%; height: 33%; max-width: 100%; max-height: 33%; color: rgb(255, 255, 255); font-size: 28px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;);" />
+                    <ui:Label text="Slowest Time: " name="response_slowestScore" style="width: 100%; height: 33%; max-width: 100%; max-height: 33%; color: rgb(255, 255, 255); font-size: 28px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="response_buttonContainer" picking-mode="Ignore" style="flex-grow: 1; width: 25%; max-width: 25%; justify-content: space-around;">
+                    <ui:Button text="Start" name="response_startButton" style="font-size: 48px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-right-radius: 50px; border-bottom-left-radius: 50px; background-color: rgb(37, 125, 130); color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="response_blankContainer" style="flex-grow: 1; width: 25%; max-width: 25%;" />
+            </ui:VisualElement>
+            <ui:Label name="BackButton13" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown13" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen14" class="ScreenTemplate" style="display: flex; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen14.png?fileID=2800000&amp;guid=e00ce3b54369b4c829e1dc8b87dfddb1&amp;type=3#Screen14&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:VisualElement name="simon_gameBoard" class="simon_gameBoard" style="flex-direction: column;">
+                <ui:VisualElement name="simon_firstRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
+                    <ui:Button name="simon_gameTile01" class="simon_gameTile" />
+                    <ui:Button name="simon_gameTile02" class="simon_gameTile" />
+                    <ui:Button name="simon_gameTile03" class="simon_gameTile" />
+                </ui:VisualElement>
+                <ui:VisualElement name="simon_secondRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
+                    <ui:Button name="simon_gameTile04" class="simon_gameTile" />
+                    <ui:Button name="simon_gameTile05" class="simon_gameTile" />
+                    <ui:Button name="simon_gameTile06" class="simon_gameTile" />
+                </ui:VisualElement>
+                <ui:VisualElement name="simon_thirdRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 315px; max-height: 315px; flex-direction: row;">
+                    <ui:Button name="simon_gameTile07" class="simon_gameTile" />
+                    <ui:Button name="simon_gameTile08" class="simon_gameTile" />
+                    <ui:Button name="simon_gameTile09" class="simon_gameTile" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button text="START" name="simon_startButton" selectable="true" class="simon_startButton" />
+            <ui:Label name="BackButton14" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown14" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen15" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen15.png?fileID=2800000&amp;guid=25648a291a680418daf1a6a98a1014a3&amp;type=3#Screen15&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton15" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown15" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen16" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen16.png?fileID=2800000&amp;guid=4346383ba899e46a889b81a3c1ab16b1&amp;type=3#Screen16&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton16" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown16" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen17" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen17.png?fileID=2800000&amp;guid=320cc0cf8d3ce4a78abc4a5e0fa43d0e&amp;type=3#Screen17&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton17" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown17" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen18" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen18.png?fileID=2800000&amp;guid=ed07ac6f9be964dea84ddf577671fc93&amp;type=3#Screen18&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton18" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown18" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen19" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen19.png?fileID=2800000&amp;guid=355b6e6cf63ef497db7a33926284732a&amp;type=3#Screen19&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton19" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown19" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen20" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen20.png?fileID=2800000&amp;guid=40b51e6dabb0d4511b27715e7870fd0a&amp;type=3#Screen20&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton20" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown20" class="navigation-dropdown" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Screen21" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background11.jpg?fileID=2800000&amp;guid=caa9971335725407a8a052e055431e91&amp;type=3#Background11&quot;);">
+            <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
+            <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen21.png?fileID=2800000&amp;guid=3c39675e8b35e43d4b7cf02afbf0c901&amp;type=3#Screen21&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:Label name="BackButton21" tooltip="Back" class="back-button" />
+            <ui:DropdownField index="0" name="Navigation-Dropdown21" class="navigation-dropdown" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
