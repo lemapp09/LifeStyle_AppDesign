@@ -9,8 +9,9 @@ namespace AppDesign
         // UI Elements
         private List<VisualElement> _appElements = new List<VisualElement>();
         private List<VisualElement> _otherScreens = new List<VisualElement>();
-        private VisualElement _mainScreen ;
+        private VisualElement _mainScreen, _settingsScreen ;
         private List<DropdownField> _navigationDropdowns = new List<DropdownField>();
+        private List<VisualElement> _settingsButtons = new List<VisualElement>();
         private List<VisualElement> _backButtons = new List<VisualElement>();
 
         // Component & Manager References
@@ -34,6 +35,7 @@ namespace AppDesign
         private DrawingManager _drawingManager;
         private ResponseGameManager _responseGameManager;
         private SimonGameManager _simonGameManager;
+        private SettingsManager _settingsManager;
 
         // State & Data Containers
         private TextField _weatherSearch;
@@ -80,6 +82,9 @@ namespace AppDesign
         private Button simon_startButton;
         private List<Button> simon_gameTiles;
         private Label simon_playerTurnLabel;
+        
+        // Settings
+        private Slider _masterVolumeSlider, _backgroundVolumeSlider, _sfxVolumeSlider;
 
         void Awake()
         {
@@ -92,6 +97,7 @@ namespace AppDesign
 
             var root = _uiDocument.rootVisualElement;
             _mainScreen = new VisualElement();
+            _settingsScreen = new VisualElement();
             _otherScreens = new List<VisualElement>();
 
             // Initialize components
@@ -123,6 +129,8 @@ namespace AppDesign
             _drawingManager = GetComponent<DrawingManager>() ?? gameObject.AddComponent<DrawingManager>();
             _responseGameManager = GetComponent<ResponseGameManager>() ?? gameObject.AddComponent<ResponseGameManager>();
             _simonGameManager = GetComponent<SimonGameManager>() ?? gameObject.AddComponent<SimonGameManager>();
+            _settingsManager = GetComponent<SettingsManager>() ?? gameObject.AddComponent<SettingsManager>();
+            
 
             // Find UI containers
             #region Weather
@@ -241,12 +249,24 @@ namespace AppDesign
             _simonGameManager.SetGameElements(simon_gameBoard, simon_startButton, simon_gameTiles, simon_playerTurnLabel);
             #endregion
             
+            #region Settings
+            _masterVolumeSlider = root.Q<Slider>("MasterVolumeSlider");
+            _masterVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnMasterVolumeChanged);
+            _backgroundVolumeSlider = root.Q<Slider>("BackgroundVolumeSlider");
+            _backgroundVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnBackgroundVolumeChanged);
+            _sfxVolumeSlider = root.Q<Slider>("SFXVolumeSlider");
+            _sfxVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnSFXVolumeChanged);
+            _settingsManager.SetSliderElements(_masterVolumeSlider, _masterVolumeSlider, _masterVolumeSlider);
+            #endregion Settings
+            
             // Setup UI
-            _structureElements.FindScreens(root, _mainScreen, _otherScreens);
+            var results = _structureElements.FindScreens(root, _mainScreen, _settingsScreen,  _otherScreens);
+            _mainScreen = results.Item1;
+            _settingsScreen = results.Item2;
             _structureElements.FindAppElements(root, _appElements, _wiggleEffect);
             _structureElements.AssignScreensToAppElements( _appElements,_otherScreens, this);
             
-            _structureElements.SetupBackButtons(_backButtons, _otherScreens, this, _wiggleEffect);
+            _structureElements.SetupBackButtons(_backButtons, _otherScreens, this, _wiggleEffect, _settingsButtons);
             _structureElements.SetupNavigationDropdowns(root, _navigationDropdowns ,_otherScreens, this);
         }
 
@@ -261,6 +281,11 @@ namespace AppDesign
             if (_mainScreen != null)
             {
                 _mainScreen.style.display = DisplayStyle.None;
+            }
+
+            if (_settingsScreen != null)
+            {
+                _settingsScreen.style.display = DisplayStyle.None;
             }
 
             // Show selected screen
@@ -340,6 +365,11 @@ namespace AppDesign
             else if (screenName == "MainScreen" && _mainScreen != null)
             {
                 _mainScreen.style.display = DisplayStyle.Flex;
+            }
+            else if (screenName == "Settings" && _settingsScreen != null)
+            {
+                _settingsManager.SetAllSliders();
+                _settingsScreen.style.display = DisplayStyle.Flex;
             }
         }
 

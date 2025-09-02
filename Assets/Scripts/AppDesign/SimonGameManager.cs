@@ -142,6 +142,7 @@ public class SimonGameManager : MonoBehaviour
             simon_playerTurnLabel.text = $"You got to level {_levelTiles.Count - 2}";
             _gameMode = GameMode.Menu;
             simon_startButton.visible = true;
+            AudioManager.Instance.RestoreBackgroundVolume();
         }
     }
 

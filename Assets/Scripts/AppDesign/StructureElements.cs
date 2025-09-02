@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,7 +8,7 @@ namespace AppDesign
 
     public class StructureElements : MonoBehaviour
     {
-        public void FindScreens(VisualElement root, VisualElement _mainScreen, List<VisualElement> _otherScreens )
+        public (VisualElement, VisualElement) FindScreens(VisualElement root, VisualElement _mainScreen, VisualElement _settingsScreen , List<VisualElement> _otherScreens )
         {
             _mainScreen = root.Q<VisualElement>("MainScreen");
             root.Query<VisualElement>(className: "ScreenTemplate").ForEach(screenElem =>
@@ -26,11 +25,24 @@ namespace AppDesign
             {
                 Debug.LogError("MainScreen not found. Ensure it has the name 'MainScreen'.");
             }
+            
+            _settingsScreen = root.Q<VisualElement>("SettingsScreen");
+
+            if (_settingsScreen != null)
+            {
+                _settingsScreen.style.display = DisplayStyle.None;
+            }
+            else
+            {
+                Debug.LogError("SettingsScreen not found. Ensure it has the name 'MainScreen'.");
+            }
 
             if (_otherScreens.Count != 21)
             {
                 Debug.LogWarning($"Expected 21 non-main screens, found {_otherScreens.Count}.");
             }
+            
+            return (_mainScreen, _settingsScreen);
         }
 
         public void FindAppElements(VisualElement root, List<VisualElement> _appElements, WiggleEffect _wiggleEffect)
@@ -54,7 +66,8 @@ namespace AppDesign
             }
         }
 
-        public void SetupBackButtons(List<VisualElement> _backButtons, List<VisualElement> _otherScreens, AppManager _appManager, WiggleEffect _wiggleEffect)
+        public void SetupBackButtons(List<VisualElement> _backButtons, List<VisualElement> _otherScreens, AppManager _appManager, 
+            WiggleEffect _wiggleEffect, List<VisualElement> _settingsButtons)
         {
             _backButtons.Clear();
             foreach (var screen in _otherScreens)
@@ -67,6 +80,20 @@ namespace AppDesign
                     backButton.RegisterCallback<PointerUpEvent>(evt => { _appManager.ShowScreen("MainScreen"); });
                     backButton.RegisterCallback<PointerEnterEvent>(_wiggleEffect.OnHoverEnter);
                     backButton.RegisterCallback<PointerLeaveEvent>(_wiggleEffect.OnHoverLeave);
+                }
+            }
+            
+            _settingsButtons.Clear();
+            foreach (var screen in _otherScreens)
+            {
+                var settingsButton = screen.Q<Label>(className: "settings-button");
+                if (settingsButton != null)
+                {
+                    _settingsButtons.Add(settingsButton);
+                    var currentScreen = screen;
+                    settingsButton.RegisterCallback<PointerUpEvent>(evt => { _appManager.ShowScreen("Settings"); });
+                    settingsButton.RegisterCallback<PointerEnterEvent>(_wiggleEffect.OnHoverEnter);
+                    settingsButton.RegisterCallback<PointerLeaveEvent>(_wiggleEffect.OnHoverLeave);
                 }
             }
         }

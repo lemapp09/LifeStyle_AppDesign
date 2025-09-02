@@ -162,6 +162,24 @@ public class AudioManager : MonoBehaviour
         SetVolume(_sfxVolumeParameter, volume);
     }
 
+    // Gets the current master volume as a linear value (0.0 to 1.0).
+    public float GetMasterVolume()
+    {
+        return GetVolume(_masterVolumeParameter);
+    }
+
+    // Gets the current background volume as a linear value (0.0 to 1.0).
+    public float GetBackgroundVolume()
+    {
+        return GetVolume(_backgroundVolumeParameter);
+    }
+
+    // Gets the current SFX volume as a linear value (0.0 to 1.0).
+    public float GetSFXVolume()
+    {
+        return GetVolume(_sfxVolumeParameter);
+    }
+
     // Reduces the master volume to 25% of its current value.
     public void DuckMasterVolume()
     {
@@ -173,7 +191,7 @@ public class AudioManager : MonoBehaviour
         _previousMasterVolume = Mathf.Pow(10, currentDb / 20f);
 
         // Calculate the new volume (25% of the previous value).
-        float newVolume = _previousMasterVolume * 0.25f;
+        float newVolume = _previousMasterVolume * 0.1f;
 
         // Set the master volume to the new, lower value.
         SetMasterVolume(newVolume);
@@ -216,6 +234,15 @@ public class AudioManager : MonoBehaviour
         // Convert the linear volume (0-1) to a logarithmic decibel scale.
         // A volume of 0 results in -80dB, which is considered silence.
         _audioMixer.SetFloat(parameterName, Mathf.Log10(Mathf.Max(volume, 0.0001f)) * 20f);
+    }
+
+    // Helper method to get the volume from the Audio Mixer and convert it to linear scale.
+    private float GetVolume(string parameterName)
+    {
+        float currentDb;
+        _audioMixer.GetFloat(parameterName, out currentDb);
+        // Convert the decibel value back to a linear volume (0-1).
+        return Mathf.Pow(10, currentDb / 20f);
     }
 
     // Plays the SFX clip with a specific pitch.
