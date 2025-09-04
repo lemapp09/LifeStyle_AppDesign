@@ -21,6 +21,14 @@ namespace AppDesign
         private VisualElement _sudokuGameWon;
         private Color _blankCellColor = new Color(0.5f, 0.5f, 0.5f, 0.4f);
 
+        // This static method will be called when the Unity domain reloads.
+        // It resets the static variable _cluesToKeep to its default value.
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void OnDomainReload()
+        {
+            _cluesToKeep = 0;
+        }
+
         // Entry point to generate a filled Sudoku _board
         public int[,] GenerateBoard()
         {

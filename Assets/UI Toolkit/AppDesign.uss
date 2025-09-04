@@ -1138,3 +1138,30 @@ VisualElement {
     align-items: center;
     align-content: auto;
 }
+
+.settings-slider {
+    height: auto;
+}
+
+.settings-slider .unity-base-slider__tracker{
+    height: 15px;
+    border-radius: 7px;
+    background-color: orange;
+}
+
+.settings-slider .unity-base-slider__fill{
+    height: auto;
+    border-radius: 7px;
+    background-color: coral;
+}
+
+.settings-slider .unity-base-slider__dragger-border{
+    height: auto;
+}
+
+.settings-slider .unity-base-slider__dragger{
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background-color: gainsboro;
+}

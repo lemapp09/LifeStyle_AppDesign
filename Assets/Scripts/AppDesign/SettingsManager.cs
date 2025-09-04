@@ -5,6 +5,7 @@ public class SettingsManager : MonoBehaviour
 {
     
     private Slider _masterVolumeSlider, _backgroundVolumeSlider, _sfxVolumeSlider;
+    private Label _masterVolumeLabel, _backgroundVolumeLabel, _sfxVolumeLabel;
     
     // These methods provide a public interface for UI elements to interact with the AudioManager.
     // This separates the settings logic from the core audio functionality.
@@ -25,6 +26,7 @@ public class SettingsManager : MonoBehaviour
     public void SetMasterVolume(float volume)
     {
         AudioManager.Instance.SetMasterVolume(volume);
+        _masterVolumeLabel.text = GetMasterVolume().ToString();
     }
 
     /// <summary>
@@ -43,6 +45,7 @@ public class SettingsManager : MonoBehaviour
     public void SetBackgroundVolume(float volume)
     {
         AudioManager.Instance.SetBackgroundVolume(volume);
+        _backgroundVolumeLabel.text = volume.ToString();
     }
 
     /// <summary>
@@ -61,20 +64,31 @@ public class SettingsManager : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         AudioManager.Instance.SetSFXVolume(volume);
+        _sfxVolumeLabel.text = volume.ToString();
     }
 
-    public void SetSliderElements(Slider masterVolumeSlider, Slider backgroundVolumeSlider, Slider sfxVolumeSlider)
+    public void SetSliderElements(Slider masterVolumeSlider, Slider backgroundVolumeSlider, Slider sfxVolumeSlider,
+        Label masterVolumeLabel, Label backgroundVolumeLabel, Label sfxVolumeLabel)
     {
         _masterVolumeSlider = masterVolumeSlider;
+        _masterVolumeLabel = masterVolumeLabel;
         _backgroundVolumeSlider = backgroundVolumeSlider;
+        _backgroundVolumeLabel = backgroundVolumeLabel;
         _sfxVolumeSlider = sfxVolumeSlider;
+        _sfxVolumeLabel = sfxVolumeLabel;
     }
 
     public void SetAllSliders()
     {
-        _masterVolumeSlider.value = AudioManager.Instance.GetMasterVolume();
-        _backgroundVolumeSlider.value = AudioManager.Instance.GetBackgroundVolume();
-        _sfxVolumeSlider.value = AudioManager.Instance.GetSFXVolume();
+        float masterVolume = GetMasterVolume();
+        _masterVolumeSlider.value = masterVolume;
+        _masterVolumeLabel.text = "";
+        float backgroundVolume = GetBackgroundVolume();
+        _backgroundVolumeSlider.value = backgroundVolume;
+        _backgroundVolumeLabel.text = "";
+        float sfxVolume = GetSFXVolume();
+        _sfxVolumeSlider.value = sfxVolume;
+        _sfxVolumeLabel.text = "";
     }
     
     public void OnMasterVolumeChanged(ChangeEvent<float> evt)

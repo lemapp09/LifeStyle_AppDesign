@@ -4,7 +4,14 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-   
+    // This static method is called when the Unity domain reloads, ensuring
+    // the static _instance variable is reset.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void OnDomainReload()
+    {
+        _instance = null;
+    }
+
     // Singleton pattern for easy access from other scripts.
     private static AudioManager _instance;
     public static AudioManager Instance
@@ -13,7 +20,8 @@ public class AudioManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<AudioManager>();
+                // Use the more performant FindAnyObjectByType method.
+                _instance = FindAnyObjectByType<AudioManager>();
                 if (_instance == null)
                 {
                     Debug.LogError("AudioManager instance not found. Make sure there is one in your scene.");

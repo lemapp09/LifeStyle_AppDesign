@@ -175,7 +175,7 @@ namespace AppDesign
 
         private void UpdateScore()
         {
-            _scoreLabel.text = $"Player: {_playerScore} - Computer: {_computerScore}";
+            _scoreLabel.text = $"Player: {_playerScore}\nComputer: {_computerScore}";
         }
     }
 }

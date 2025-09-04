@@ -85,6 +85,7 @@ namespace AppDesign
         
         // Settings
         private Slider _masterVolumeSlider, _backgroundVolumeSlider, _sfxVolumeSlider;
+        private Label _masterVolumeLabel, _backgroundVolumeLabel, _sfxVolumeLabel;
 
         void Awake()
         {
@@ -252,11 +253,15 @@ namespace AppDesign
             #region Settings
             _masterVolumeSlider = root.Q<Slider>("MasterVolumeSlider");
             _masterVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnMasterVolumeChanged);
+            _masterVolumeLabel = root.Q<Label>("MasterVolumeValue");
             _backgroundVolumeSlider = root.Q<Slider>("BackgroundVolumeSlider");
             _backgroundVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnBackgroundVolumeChanged);
+            _backgroundVolumeLabel = root.Q<Label>("BackgroundVolumeValue");
             _sfxVolumeSlider = root.Q<Slider>("SFXVolumeSlider");
             _sfxVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnSFXVolumeChanged);
-            _settingsManager.SetSliderElements(_masterVolumeSlider, _masterVolumeSlider, _masterVolumeSlider);
+            _sfxVolumeLabel = root.Q<Label>("SFXVolumeValue");
+            _settingsManager.SetSliderElements(_masterVolumeSlider, _masterVolumeSlider, _masterVolumeSlider,
+                _masterVolumeLabel, _backgroundVolumeLabel, _sfxVolumeLabel );
             #endregion Settings
             
             // Setup UI

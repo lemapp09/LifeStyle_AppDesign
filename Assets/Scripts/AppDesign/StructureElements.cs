@@ -37,9 +37,9 @@ namespace AppDesign
                 Debug.LogError("SettingsScreen not found. Ensure it has the name 'MainScreen'.");
             }
 
-            if (_otherScreens.Count != 21)
+            if (_otherScreens.Count != 22)
             {
-                Debug.LogWarning($"Expected 21 non-main screens, found {_otherScreens.Count}.");
+                Debug.LogWarning($"Expected 22 non-main screens, found {_otherScreens.Count}.");
             }
             
             return (_mainScreen, _settingsScreen);
