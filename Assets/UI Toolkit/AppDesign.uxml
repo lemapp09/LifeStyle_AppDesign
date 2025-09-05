@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3#AppDesign" />
+    <Style src="project://database/Assets/UI%20Toolkit/AppDesign.uss?fileID=7433441132597879392&amp;guid=732af8675f168418fbb84ba24c710387&amp;type=3" />
     <ui:VisualElement name="Background" class="background">
         <ui:VisualElement name="MainScreen" class="MainScreenTemplate">
             <ui:VisualElement name="TopClearRow" class="TopClearRow" />
@@ -460,9 +460,52 @@
         <ui:VisualElement name="Screen15" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background03.jpg?fileID=2800000&amp;guid=998d296e969034a8481552a4e428c0a3&amp;type=3#Background03&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
             <ui:VisualElement name="TitleGraphic" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Titles/Screen15.png?fileID=2800000&amp;guid=25648a291a680418daf1a6a98a1014a3&amp;type=3#Screen15&quot;); width: 80%; -unity-background-scale-mode: scale-to-fit; height: 11%; max-height: 11%;" />
+            <ui:VisualElement name="solitaireGameScreen" class="solitaireGameScreen">
+                <ui:VisualElement name="EmptyRow" style="flex-grow: 1; height: 20px; max-height: 20px;" />
+                <ui:VisualElement name="DeckRow" style="flex-grow: 1; width: 100%; max-width: 100%; height: 167px; max-height: 167px; flex-direction: row;">
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1; width: 15%; max-width: 15%;" />
+                    <ui:Button name="solitaire-deck-button" emoji-fallback-support="false" style="width: 115px; max-width: 115px; height: 167px; max-height: 167px; background-color: rgba(188, 188, 188, 0.5); background-image: none; background-size: 115px 167px;" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:VisualElement name="solitaire-discard-pile" style="flex-grow: 1; background-color: rgba(149, 149, 149, 0.5); width: 115px; height: 167px; max-width: 115px; max-height: 167px;" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1; width: 15%; max-width: 15%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="EmptyRow" style="flex-grow: 1; height: 75px; max-height: 75px;" />
+                <ui:VisualElement name="FoundationRow" style="flex-grow: 1; height: 160px; max-height: 160px; flex-direction: row;">
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-foundation-piles" style="background-color: rgba(0, 0, 0, 0.5); width: 115px; height: 167px; max-width: 115px; max-height: 167px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-foundation-piles" style="background-color: rgba(0, 0, 0, 0.5); width: 115px; height: 167px; max-width: 115px; max-height: 167px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-foundation-piles" style="background-color: rgba(0, 0, 0, 0.5); width: 115px; height: 167px; max-width: 115px; max-height: 167px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-foundation-piles" style="background-color: rgba(0, 0, 0, 0.5); width: 115px; height: 167px; max-width: 115px; max-height: 167px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="EmptyRow" style="flex-grow: 1; height: 75px; max-height: 75px;" />
+                <ui:VisualElement name="TableauPilesRow" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                    <ui:Button name="solitaire-tableau-piles" style="width: 115px; max-width: 115px; background-image: url(&quot;project://database/Assets/Art/Textures/TealGradient.png?fileID=2800000&amp;guid=775304c014d754284b55937d11b5f25c&amp;type=3#TealGradient&quot;); background-color: rgba(0, 0, 0, 0);" />
+                    <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; width: 90%; max-width: 90%; height: 8%; max-height: 8%;">
+                <ui:Label text="Click on a card and a yellow border will appear. Then click on the spot where you want to move the card." style="width: 70%; max-width: 70%; height: 100%; max-height: 100%; color: rgb(255, 255, 255); font-size: 36px; white-space: pre-wrap; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); -unity-background-image-tint-color: rgba(255, 255, 255, 0.67); background-color: rgba(255, 255, 255, 0.36); border-top-left-radius: 35px; border-top-right-radius: 35px; border-bottom-right-radius: 35px; border-bottom-left-radius: 35px; padding-right: 2px; margin-right: 4px; margin-left: 2px; padding-left: 11px;" />
+            </ui:VisualElement>
+            <ui:DropdownField index="0" name="Navigation-Dropdown15" class="navigation-dropdown" />
             <ui:Label name="SettingsButton15" tooltip="Settings" class="settings-button" />
             <ui:Label name="BackButton15" tooltip="Back" class="back-button" />
-            <ui:DropdownField index="0" name="Navigation-Dropdown15" class="navigation-dropdown" />
         </ui:VisualElement>
         <ui:VisualElement name="Screen16" class="ScreenTemplate" style="display: none; background-image: url(&quot;project://database/Assets/Art/App%20Design/Background04.jpg?fileID=2800000&amp;guid=399f845a0c42b4177b5c4bcecf10e1a1&amp;type=3#Background04&quot;);">
             <ui:VisualElement name="BlankSpace" style="flex-grow: 1; max-height: 5%;" />
@@ -544,9 +587,9 @@
                             <ui:VisualElement name="VisualElement" style="flex-grow: 1; height: 15%; max-height: 15%; flex-direction: row;">
                                 <ui:Label text="0" name="Label" style="-unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); font-size: 28px; -unity-text-outline-color: rgb(94, 32, 32); color: rgb(255, 255, 255);" />
                                 <ui:VisualElement style="flex-grow: 1;" />
-                                <ui:Label text="0.5" name="SFXVolumeValue" style="font-size: 36px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
+                                <ui:Label text="0.5" name="SFXVolumeValue" style="font-size: 115px; -unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); color: rgb(255, 255, 255); -unity-text-align: upper-center;" />
                                 <ui:VisualElement style="flex-grow: 1;" />
-                                <ui:Label text="1" style="-unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); font-size: 28px; color: rgb(255, 255, 255); -unity-text-align: upper-right;" />
+                                <ui:Label text="1" style="-unity-font-definition: resource(&apos;FlatSkin/Font/Roboto-Bold&apos;); font-size: 167px; color: rgb(255, 255, 255); -unity-text-align: upper-right;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                         <ui:VisualElement name="EmptySpace" style="flex-grow: 1;" />

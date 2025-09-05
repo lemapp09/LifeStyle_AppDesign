@@ -1143,25 +1143,51 @@ VisualElement {
     height: auto;
 }
 
-.settings-slider .unity-base-slider__tracker{
+.settings-slider .unity-base-slider__tracker {
     height: 15px;
     border-radius: 7px;
     background-color: orange;
 }
 
-.settings-slider .unity-base-slider__fill{
+.settings-slider .unity-base-slider__fill {
     height: auto;
     border-radius: 7px;
     background-color: coral;
 }
 
-.settings-slider .unity-base-slider__dragger-border{
+.settings-slider .unity-base-slider__dragger-border {
     height: auto;
 }
 
-.settings-slider .unity-base-slider__dragger{
+.settings-slider .unity-base-slider__dragger {
     height: 36px;
     width: 36px;
     border-radius: 18px;
     background-color: gainsboro;
+}
+
+.solitaireGameScreen {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 90%;
+    height: 70%;
+    max-height: 70%;
+    background-color: rgba(255, 97, 0, 0.6);
+    -unity-background-image-tint-color: rgb(255, 97, 0);
+    background-image: url("project://database/Assets/Art/Textures/simon_07.png?fileID=2800000&guid=0d156f51c446e41f1a263bb4f466e457&type=3#simon_07");
+}
+
+.card-button {
+    width: 105px;
+    max-width: 105px;
+    height: 155px;
+    max-height: 155px;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    position: absolute;
+    background-size: 105px 155px;
+    background-position-y: top 0;
+    background-position-x: left 0;
 }

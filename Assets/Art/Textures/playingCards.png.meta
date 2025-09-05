@@ -100,11 +100,11 @@ TextureImporter:
       name: card_back1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 464
-        width: 105
-        height: 154
-      alignment: 0
+        x: 14
+        y: 467
+        width: 91
+        height: 132
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a5e2738132834582aed2b67472ad13b
-      internalID: 113877378
+      spriteID: 62d4bd5e9c312482e83f6961d3df1ddb
+      internalID: 1813230540
       vertices: []
       indices: 
       edges: []
@@ -122,10 +122,10 @@ TextureImporter:
       name: card_2C
       rect:
         serializedVersion: 2
-        x: 105
-        y: 464
-        width: 105
-        height: 154
+        x: 119
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 618577bcf9a9f4c22a9e285d078ea67e
-      internalID: 1977668627
+      spriteID: d21122e47361444e4ac4e03732aecb25
+      internalID: 1379383673
       vertices: []
       indices: 
       edges: []
@@ -144,10 +144,10 @@ TextureImporter:
       name: card_3C
       rect:
         serializedVersion: 2
-        x: 210
-        y: 464
-        width: 105
-        height: 154
+        x: 223
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47b9f0977d12342cdaa494bdd3974609
-      internalID: 72885583
+      spriteID: 76220239d3a71437eb113088440086b6
+      internalID: 1376487668
       vertices: []
       indices: 
       edges: []
@@ -166,10 +166,10 @@ TextureImporter:
       name: card_4C
       rect:
         serializedVersion: 2
-        x: 315
-        y: 464
-        width: 105
-        height: 154
+        x: 327
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9fe9f6907fa34424ba4db812b91c2a0
-      internalID: 103864432
+      spriteID: 51d0b83a93f474877a40c7ee527b2c35
+      internalID: 406655430
       vertices: []
       indices: 
       edges: []
@@ -188,10 +188,10 @@ TextureImporter:
       name: card_5C
       rect:
         serializedVersion: 2
-        x: 420
-        y: 464
-        width: 105
-        height: 154
+        x: 431
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b8a55c30a0b2423bb99206c21fb37b3
-      internalID: -1205973152
+      spriteID: b689956104b1744aaa8acc6ef0995c7e
+      internalID: 1472983482
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
       name: card_6C
       rect:
         serializedVersion: 2
-        x: 525
-        y: 464
-        width: 105
-        height: 154
+        x: 535
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,8 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae4230ce76ae24a8ba927c29dbbee112
-      internalID: -947289505
+      spriteID: de1039d7bff6f45a793af6f627549973
+      internalID: 234258763
       vertices: []
       indices: 
       edges: []
@@ -232,10 +232,10 @@ TextureImporter:
       name: card_7C
       rect:
         serializedVersion: 2
-        x: 630
-        y: 464
-        width: 105
-        height: 154
+        x: 640
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d440cc1311654797927e70c9866c6d8
-      internalID: -925553903
+      spriteID: 8b885c23a1e7a46c7bb8e0639e47fb49
+      internalID: 243544416
       vertices: []
       indices: 
       edges: []
@@ -254,10 +254,10 @@ TextureImporter:
       name: card_8C
       rect:
         serializedVersion: 2
-        x: 735
-        y: 464
-        width: 105
-        height: 154
+        x: 744
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98ac51ff33f404c42999c3649622aaf2
-      internalID: -144518907
+      spriteID: ae8c5483d27c542458d20495cc6c76f5
+      internalID: 1016022018
       vertices: []
       indices: 
       edges: []
@@ -276,10 +276,10 @@ TextureImporter:
       name: card_9C
       rect:
         serializedVersion: 2
-        x: 840
-        y: 464
-        width: 105
-        height: 154
+        x: 848
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46ae0fd3e05b0451094400f249c811ed
-      internalID: 1751170126
+      spriteID: 39085dfdc14aa404eae2ebeb49bf20ac
+      internalID: 981744601
       vertices: []
       indices: 
       edges: []
@@ -298,10 +298,10 @@ TextureImporter:
       name: card_10C
       rect:
         serializedVersion: 2
-        x: 945
-        y: 464
-        width: 105
-        height: 154
+        x: 952
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,8 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01d040ed438e449838acc0b7fe451512
-      internalID: -1831339196
+      spriteID: 4f1d5367a2fba4e9ebe70c3a834b472d
+      internalID: -319233648
       vertices: []
       indices: 
       edges: []
@@ -320,10 +320,10 @@ TextureImporter:
       name: card_JC
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 464
-        width: 105
-        height: 154
+        x: 1056
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9897980e4ce7e49d393bd12a0e4b0287
-      internalID: 582648822
+      spriteID: 6f56e3fc085f94cf09d78c3b8b9e69ea
+      internalID: 729947718
       vertices: []
       indices: 
       edges: []
@@ -342,10 +342,10 @@ TextureImporter:
       name: card_QC
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 464
-        width: 105
-        height: 154
+        x: 1160
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,8 +354,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e07269b85997f4d7481715467eedf0b8
-      internalID: 1899773568
+      spriteID: c428b47069b6f4fcfb448dfc5361621a
+      internalID: 1048350188
       vertices: []
       indices: 
       edges: []
@@ -364,10 +364,10 @@ TextureImporter:
       name: card_KC
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 464
-        width: 105
-        height: 154
+        x: 1265
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,8 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f04c6721bfde645419f19f8b3c44bb21
-      internalID: 909557622
+      spriteID: 47e05cc47898e42ff8683b02ddcd9c3a
+      internalID: -1229839435
       vertices: []
       indices: 
       edges: []
@@ -386,10 +386,10 @@ TextureImporter:
       name: card_AC
       rect:
         serializedVersion: 2
-        x: 1365
-        y: 464
-        width: 105
-        height: 154
+        x: 1370
+        y: 467
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,20 +398,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc6b84d50c7cc4b7786be636bf891e53
-      internalID: 2001234961
+      spriteID: 3717bbcc701814ee28316520499c37ee
+      internalID: -1672894722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: card_Joker1
+      name: card_joker1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 310
-        width: 105
-        height: 154
+        x: 14
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,8 +420,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42da0088d67024dae88afdefd9b3e864
-      internalID: -580781710
+      spriteID: 5be00c84835f04f87b8a2503242dac18
+      internalID: -1916487272
       vertices: []
       indices: 
       edges: []
@@ -430,10 +430,10 @@ TextureImporter:
       name: card_2S
       rect:
         serializedVersion: 2
-        x: 105
-        y: 310
-        width: 105
-        height: 154
+        x: 119
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,8 +442,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926cef58a73454249a3b9060143240b2
-      internalID: 1060523459
+      spriteID: ae2a5e863578b4a0382c301e9e75537a
+      internalID: 1958395663
       vertices: []
       indices: 
       edges: []
@@ -452,10 +452,10 @@ TextureImporter:
       name: card_3S
       rect:
         serializedVersion: 2
-        x: 210
-        y: 310
-        width: 105
-        height: 154
+        x: 223
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -464,8 +464,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 432ded384616240d18a71042dfc05fd1
-      internalID: -1652055504
+      spriteID: f55ab3225e8c646abb2ec39f2fe0accb
+      internalID: -1244574541
       vertices: []
       indices: 
       edges: []
@@ -474,10 +474,10 @@ TextureImporter:
       name: card_4S
       rect:
         serializedVersion: 2
-        x: 315
-        y: 310
-        width: 105
-        height: 154
+        x: 327
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,8 +486,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74701d90e8de04256bb87081c98073cc
-      internalID: 359070311
+      spriteID: b61f0df35f3ad4e12846c3000d730b4d
+      internalID: 2048501824
       vertices: []
       indices: 
       edges: []
@@ -496,10 +496,10 @@ TextureImporter:
       name: card_5S
       rect:
         serializedVersion: 2
-        x: 420
-        y: 310
-        width: 105
-        height: 154
+        x: 431
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,8 +508,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1d28b3f3a9d647d7905d877b00dd258
-      internalID: -1251508107
+      spriteID: 14351c96f96db413892c8d0fd854edca
+      internalID: -1126304889
       vertices: []
       indices: 
       edges: []
@@ -518,10 +518,10 @@ TextureImporter:
       name: card_6S
       rect:
         serializedVersion: 2
-        x: 525
-        y: 310
-        width: 105
-        height: 154
+        x: 535
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1b6a4a229c02484e8fbdc3f15b903a2
-      internalID: -444743318
+      spriteID: 21692d779804f47a1a6a387fd73997f0
+      internalID: -989535853
       vertices: []
       indices: 
       edges: []
@@ -540,10 +540,10 @@ TextureImporter:
       name: card_7S
       rect:
         serializedVersion: 2
-        x: 630
-        y: 310
-        width: 105
-        height: 154
+        x: 640
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -552,8 +552,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b526115690aa4e879b5d5aad72b7ec1
-      internalID: -1941140095
+      spriteID: dc236448e0e6f473980121e854d81cb7
+      internalID: -2141024689
       vertices: []
       indices: 
       edges: []
@@ -562,10 +562,10 @@ TextureImporter:
       name: card_8S
       rect:
         serializedVersion: 2
-        x: 735
-        y: 310
-        width: 105
-        height: 154
+        x: 744
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -574,8 +574,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70d9520935c974f7d9699a5fed788e5c
-      internalID: -1870558289
+      spriteID: acd7afc0d090d4736b3451dfd5902d3d
+      internalID: 1157737836
       vertices: []
       indices: 
       edges: []
@@ -584,10 +584,10 @@ TextureImporter:
       name: card_9S
       rect:
         serializedVersion: 2
-        x: 840
-        y: 310
-        width: 105
-        height: 154
+        x: 848
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,8 +596,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38803c81f75a349f5804dca6ae740048
-      internalID: 767881651
+      spriteID: 8558a1f62ec7c48da8da666da6374f01
+      internalID: 1003577618
       vertices: []
       indices: 
       edges: []
@@ -606,10 +606,10 @@ TextureImporter:
       name: card_10S
       rect:
         serializedVersion: 2
-        x: 945
-        y: 310
-        width: 105
-        height: 154
+        x: 952
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -618,8 +618,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb03cfd69a8624684bf7838e564451eb
-      internalID: 1203200308
+      spriteID: 362a6da689d714a15b2012a7bedf2a3e
+      internalID: 736151685
       vertices: []
       indices: 
       edges: []
@@ -628,10 +628,10 @@ TextureImporter:
       name: card_JS
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 310
-        width: 105
-        height: 154
+        x: 1056
+        y: 316
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -640,8 +640,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d9508127acf2433c80e9a445106624c
-      internalID: 1572518751
+      spriteID: bfe690f1abb234fbd93020b59b47c39e
+      internalID: 247896725
       vertices: []
       indices: 
       edges: []
@@ -650,10 +650,10 @@ TextureImporter:
       name: card_QS
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 310
-        width: 105
-        height: 154
+        x: 1160
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -662,8 +662,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28cb76ef6891a44d28f199ce4402d137
-      internalID: -189691566
+      spriteID: 82664509fe905415e8a2598ccfae0379
+      internalID: 466750285
       vertices: []
       indices: 
       edges: []
@@ -672,10 +672,10 @@ TextureImporter:
       name: card_KS
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 310
-        width: 105
-        height: 154
+        x: 1265
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -684,8 +684,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 592ba3282c5454440a11960903657c11
-      internalID: 1268468251
+      spriteID: 9579bcd1ce9f64cb894c4990bdca0dde
+      internalID: 469755442
       vertices: []
       indices: 
       edges: []
@@ -694,10 +694,10 @@ TextureImporter:
       name: card_AS
       rect:
         serializedVersion: 2
-        x: 1365
-        y: 310
-        width: 105
-        height: 154
+        x: 1369
+        y: 317
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -706,20 +706,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 446da67900f004dbc9f824cc31795ed0
-      internalID: 1658382603
+      spriteID: d03a6698ae2124791827ebe306ae9db9
+      internalID: -137253938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: card_Joker2
+      name: card_joker2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 156
-        width: 105
-        height: 154
+        x: 14
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -728,8 +728,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d681a55d995be4182897218403b40e32
-      internalID: -736191334
+      spriteID: f938b05e2a81e475b833c5dcd0d1bb59
+      internalID: -103254797
       vertices: []
       indices: 
       edges: []
@@ -738,10 +738,10 @@ TextureImporter:
       name: card_2H
       rect:
         serializedVersion: 2
-        x: 105
-        y: 156
-        width: 105
-        height: 154
+        x: 119
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,8 +750,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62ad9987ab8b74374871bcb7aa21c6c1
-      internalID: -1095764886
+      spriteID: 168c9a7bcba4a4b4694cda9a6065886d
+      internalID: 989922697
       vertices: []
       indices: 
       edges: []
@@ -760,10 +760,10 @@ TextureImporter:
       name: card_3H
       rect:
         serializedVersion: 2
-        x: 210
-        y: 156
-        width: 105
-        height: 154
+        x: 223
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -772,8 +772,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff510bcec36e249f38c7e6c6ea4c7c68
-      internalID: -1410739026
+      spriteID: 8994c56fa54964e77adde62898d8c1d0
+      internalID: -1989794768
       vertices: []
       indices: 
       edges: []
@@ -782,10 +782,10 @@ TextureImporter:
       name: card_4H
       rect:
         serializedVersion: 2
-        x: 315
-        y: 156
-        width: 105
-        height: 154
+        x: 327
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -794,8 +794,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 187d9d9e6304a4695bf6df217c5429fd
-      internalID: 1280030597
+      spriteID: 6e65112672a0b4b5685e32bbdae67e1c
+      internalID: -884583558
       vertices: []
       indices: 
       edges: []
@@ -804,10 +804,10 @@ TextureImporter:
       name: card_5H
       rect:
         serializedVersion: 2
-        x: 420
-        y: 156
-        width: 105
-        height: 154
+        x: 431
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -816,8 +816,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3b92e09bebeb4415b8550dd83fcab0a
-      internalID: 498654356
+      spriteID: 7e7b5a96416b04d48895a3735f4a1378
+      internalID: -941821158
       vertices: []
       indices: 
       edges: []
@@ -826,10 +826,10 @@ TextureImporter:
       name: card_6H
       rect:
         serializedVersion: 2
-        x: 525
-        y: 156
-        width: 105
-        height: 154
+        x: 535
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -838,8 +838,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0db3053b66f943bdb944968e9c0d005
-      internalID: -171512406
+      spriteID: 05b78fa63b50b4a268274c28ca4361bd
+      internalID: -748208031
       vertices: []
       indices: 
       edges: []
@@ -848,10 +848,10 @@ TextureImporter:
       name: card_7H
       rect:
         serializedVersion: 2
-        x: 630
-        y: 156
-        width: 105
-        height: 154
+        x: 640
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -860,8 +860,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea7b2e33c44294a109a070ed77cd84b2
-      internalID: -1392342483
+      spriteID: ac6e7f1123c184d138924575f4d19dd6
+      internalID: -12968
       vertices: []
       indices: 
       edges: []
@@ -870,10 +870,10 @@ TextureImporter:
       name: card_8H
       rect:
         serializedVersion: 2
-        x: 735
-        y: 156
-        width: 105
-        height: 154
+        x: 744
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -882,8 +882,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b3c2abd807d145b38439d1dd4b0e03f
-      internalID: 1575452317
+      spriteID: cd8340194eb804018aa12fb135de6e63
+      internalID: 2013626835
       vertices: []
       indices: 
       edges: []
@@ -892,10 +892,10 @@ TextureImporter:
       name: card_9H
       rect:
         serializedVersion: 2
-        x: 840
-        y: 156
-        width: 105
-        height: 154
+        x: 848
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -904,8 +904,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d9b8b17b2ad0421587750f36f15b371
-      internalID: 2016773138
+      spriteID: 927bc172be35644a7bcfa859226162cc
+      internalID: 1819672127
       vertices: []
       indices: 
       edges: []
@@ -914,10 +914,10 @@ TextureImporter:
       name: card_10H
       rect:
         serializedVersion: 2
-        x: 945
-        y: 156
-        width: 105
-        height: 154
+        x: 952
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -926,8 +926,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad5e014dca1c446389b8d7f6ed1a2783
-      internalID: -620167432
+      spriteID: 18ea910ff9304404fa693933e23caa81
+      internalID: -1544431185
       vertices: []
       indices: 
       edges: []
@@ -936,10 +936,10 @@ TextureImporter:
       name: card_JH
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 156
-        width: 105
-        height: 154
+        x: 1056
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -948,8 +948,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36a013fde69c54c7fb288166a0ba6377
-      internalID: 735833320
+      spriteID: 2a728a2ef2fda4794b8bd222daaa5c82
+      internalID: -1750382388
       vertices: []
       indices: 
       edges: []
@@ -958,10 +958,10 @@ TextureImporter:
       name: card_QH
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 156
-        width: 105
-        height: 154
+        x: 1160
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -970,8 +970,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad4aaf14b685c46a0a2340a32059c1f6
-      internalID: 1375890371
+      spriteID: d591eb817095a427db9d4fbac7ab99fc
+      internalID: -1796805853
       vertices: []
       indices: 
       edges: []
@@ -980,10 +980,10 @@ TextureImporter:
       name: card_KH
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 156
-        width: 105
-        height: 154
+        x: 1265
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -992,8 +992,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e1149692e53642d995c18ea372d7ffb
-      internalID: 614859361
+      spriteID: 7f12f54104e834d1c837186938f614fa
+      internalID: -162002716
       vertices: []
       indices: 
       edges: []
@@ -1002,10 +1002,10 @@ TextureImporter:
       name: card_AH
       rect:
         serializedVersion: 2
-        x: 1365
-        y: 156
-        width: 105
-        height: 154
+        x: 1369
+        y: 167
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1014,8 +1014,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d431ebfc52a34f00a7e7bee8ea32f31
-      internalID: 2126202269
+      spriteID: 23b4de91cbe0f4438aa9ee30185e4192
+      internalID: -2025686881
       vertices: []
       indices: 
       edges: []
@@ -1024,10 +1024,10 @@ TextureImporter:
       name: card_back2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 105
-        height: 154
+        x: 14
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1036,8 +1036,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29f8f30b6dd6d41e2b2337c5cf499423
-      internalID: -1530555942
+      spriteID: 99bb50902938444f1a32adb426682031
+      internalID: 1531541024
       vertices: []
       indices: 
       edges: []
@@ -1046,10 +1046,10 @@ TextureImporter:
       name: card_2D
       rect:
         serializedVersion: 2
-        x: 105
-        y: 2
-        width: 105
-        height: 154
+        x: 119
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1058,8 +1058,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5c61d90768bf494a88fe6dd662ea051
-      internalID: 1411034160
+      spriteID: 1930ba6b32cc942b1a4c7e899f3662de
+      internalID: 1483127266
       vertices: []
       indices: 
       edges: []
@@ -1068,10 +1068,10 @@ TextureImporter:
       name: card_3D
       rect:
         serializedVersion: 2
-        x: 210
-        y: 2
-        width: 105
-        height: 154
+        x: 223
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1080,8 +1080,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ff062651136945329197373f53fff61
-      internalID: 1982657270
+      spriteID: 0b04028b8bd004e6280050ba41a76ba5
+      internalID: -1993886922
       vertices: []
       indices: 
       edges: []
@@ -1090,10 +1090,10 @@ TextureImporter:
       name: card_4D
       rect:
         serializedVersion: 2
-        x: 315
-        y: 2
-        width: 105
-        height: 154
+        x: 327
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1102,8 +1102,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80232153b88ab46028adc8857491a9a0
-      internalID: 338060038
+      spriteID: 80f46d9ef707f49b4add5a5e0fa36984
+      internalID: 1962761395
       vertices: []
       indices: 
       edges: []
@@ -1112,10 +1112,10 @@ TextureImporter:
       name: card_5D
       rect:
         serializedVersion: 2
-        x: 420
-        y: 2
-        width: 105
-        height: 154
+        x: 431
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1124,8 +1124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49d3f4bbf3d7f4d03aa2d7de315fb41a
-      internalID: -398590529
+      spriteID: 430ff28cb7fde424f931d4bc83773784
+      internalID: -2074091548
       vertices: []
       indices: 
       edges: []
@@ -1134,10 +1134,10 @@ TextureImporter:
       name: card_6D
       rect:
         serializedVersion: 2
-        x: 525
-        y: 2
-        width: 105
-        height: 154
+        x: 535
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1146,8 +1146,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 111345a588d8c4b2d8309e065ec0e3b6
-      internalID: 974939337
+      spriteID: 45479f8192b204139bc4a5775805fbe2
+      internalID: 1534232181
       vertices: []
       indices: 
       edges: []
@@ -1156,10 +1156,10 @@ TextureImporter:
       name: card_7D
       rect:
         serializedVersion: 2
-        x: 630
-        y: 2
-        width: 105
-        height: 154
+        x: 640
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1168,8 +1168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e9ccffbe5c22479bbf481772b9bccec
-      internalID: -1456119146
+      spriteID: a6db9f0af5963454bbd17c9204f60db1
+      internalID: 492210426
       vertices: []
       indices: 
       edges: []
@@ -1178,10 +1178,10 @@ TextureImporter:
       name: card_8D
       rect:
         serializedVersion: 2
-        x: 735
-        y: 2
-        width: 105
-        height: 154
+        x: 744
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1190,8 +1190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e62d697e5b9fb4648afdb7ed2beb7f39
-      internalID: 1879714833
+      spriteID: f05b5d86223684a1588218dc1d21b784
+      internalID: 2034295321
       vertices: []
       indices: 
       edges: []
@@ -1200,10 +1200,10 @@ TextureImporter:
       name: card_9D
       rect:
         serializedVersion: 2
-        x: 840
-        y: 2
-        width: 105
-        height: 154
+        x: 848
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1212,8 +1212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a61b8870c11604a05b58def06b4d29e1
-      internalID: -1667907199
+      spriteID: 038052c37087e4750b450833f40789aa
+      internalID: 1100366128
       vertices: []
       indices: 
       edges: []
@@ -1222,10 +1222,10 @@ TextureImporter:
       name: card_10D
       rect:
         serializedVersion: 2
-        x: 945
-        y: 2
-        width: 105
-        height: 154
+        x: 952
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1234,8 +1234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c29ac14fd73a4941aac756e0e78c8fc
-      internalID: 2012515818
+      spriteID: 3cee0e91790434c98bf14823081d20e5
+      internalID: 989744232
       vertices: []
       indices: 
       edges: []
@@ -1244,10 +1244,10 @@ TextureImporter:
       name: card_JD
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 2
-        width: 105
-        height: 154
+        x: 1056
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1256,8 +1256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cd5624221d394581aa9d26ad33b70ca
-      internalID: 2025114440
+      spriteID: ef8660109cfa84c42971fdb96aa976be
+      internalID: -1955328357
       vertices: []
       indices: 
       edges: []
@@ -1266,10 +1266,10 @@ TextureImporter:
       name: card_QD
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 2
-        width: 105
-        height: 154
+        x: 1160
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1278,8 +1278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f399710567f6c415eaf782edb721a461
-      internalID: -67395688
+      spriteID: cad6eb703da9946f6a24d4d67ba64e6b
+      internalID: 1256275958
       vertices: []
       indices: 
       edges: []
@@ -1288,10 +1288,10 @@ TextureImporter:
       name: card_KD
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 2
-        width: 105
-        height: 154
+        x: 1265
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1300,8 +1300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34a3ec885b0e44fda99bbc3a559ac85f
-      internalID: -1374461787
+      spriteID: 32215ac25daed4395b8dd10a04f2f16e
+      internalID: -1362359661
       vertices: []
       indices: 
       edges: []
@@ -1310,10 +1310,10 @@ TextureImporter:
       name: card_AD
       rect:
         serializedVersion: 2
-        x: 1365
-        y: 2
-        width: 105
-        height: 154
+        x: 1369
+        y: 18
+        width: 91
+        height: 132
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1322,8 +1322,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f45b1ffe8fa5493e801f2d0f062c015
-      internalID: -935381901
+      spriteID: 4178ce3733ca041f298de7941bfeb8b6
+      internalID: -42512332
       vertices: []
       indices: 
       edges: []
@@ -1342,64 +1342,64 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":14.0,"y":4.0},"gridSpriteSize":{"x":105.0,"y":154.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      card_10C: -1831339196
-      card_10D: 2012515818
-      card_10H: -620167432
-      card_10S: 1203200308
-      card_2C: 1977668627
-      card_2D: 1411034160
-      card_2H: -1095764886
-      card_2S: 1060523459
-      card_3C: 72885583
-      card_3D: 1982657270
-      card_3H: -1410739026
-      card_3S: -1652055504
-      card_4C: 103864432
-      card_4D: 338060038
-      card_4H: 1280030597
-      card_4S: 359070311
-      card_5C: -1205973152
-      card_5D: -398590529
-      card_5H: 498654356
-      card_5S: -1251508107
-      card_6C: -947289505
-      card_6D: 974939337
-      card_6H: -171512406
-      card_6S: -444743318
-      card_7C: -925553903
-      card_7D: -1456119146
-      card_7H: -1392342483
-      card_7S: -1941140095
-      card_8C: -144518907
-      card_8D: 1879714833
-      card_8H: 1575452317
-      card_8S: -1870558289
-      card_9C: 1751170126
-      card_9D: -1667907199
-      card_9H: 2016773138
-      card_9S: 767881651
-      card_AC: 2001234961
-      card_AD: -935381901
-      card_AH: 2126202269
-      card_AS: 1658382603
-      card_JC: 582648822
-      card_JD: 2025114440
-      card_JH: 735833320
-      card_JS: 1572518751
-      card_Joker1: -580781710
-      card_Joker2: -736191334
-      card_KC: 909557622
-      card_KD: -1374461787
-      card_KH: 614859361
-      card_KS: 1268468251
-      card_QC: 1899773568
-      card_QD: -67395688
-      card_QH: 1375890371
-      card_QS: -189691566
-      card_back1: 113877378
-      card_back2: -1530555942
+      card_10C: -319233648
+      card_10D: 989744232
+      card_10H: -1544431185
+      card_10S: 736151685
+      card_2C: 1379383673
+      card_2D: 1483127266
+      card_2H: 989922697
+      card_2S: 1958395663
+      card_3C: 1376487668
+      card_3D: -1993886922
+      card_3H: -1989794768
+      card_3S: -1244574541
+      card_4C: 406655430
+      card_4D: 1962761395
+      card_4H: -884583558
+      card_4S: 2048501824
+      card_5C: 1472983482
+      card_5D: -2074091548
+      card_5H: -941821158
+      card_5S: -1126304889
+      card_6C: 234258763
+      card_6D: 1534232181
+      card_6H: -748208031
+      card_6S: -989535853
+      card_7C: 243544416
+      card_7D: 492210426
+      card_7H: -12968
+      card_7S: -2141024689
+      card_8C: 1016022018
+      card_8D: 2034295321
+      card_8H: 2013626835
+      card_8S: 1157737836
+      card_9C: 981744601
+      card_9D: 1100366128
+      card_9H: 1819672127
+      card_9S: 1003577618
+      card_AC: -1672894722
+      card_AD: -42512332
+      card_AH: -2025686881
+      card_AS: -137253938
+      card_JC: 729947718
+      card_JD: -1955328357
+      card_JH: -1750382388
+      card_JS: 247896725
+      card_KC: -1229839435
+      card_KD: -1362359661
+      card_KH: -162002716
+      card_KS: 469755442
+      card_QC: 1048350188
+      card_QD: 1256275958
+      card_QH: -1796805853
+      card_QS: 466750285
+      card_back1: 1813230540
+      card_back2: 1531541024
+      card_joker1: -1916487272
+      card_joker2: -103254797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -35,6 +35,7 @@ namespace AppDesign
         private DrawingManager _drawingManager;
         private ResponseGameManager _responseGameManager;
         private SimonGameManager _simonGameManager;
+        private SolitaireGameManager _solitaireGameManager;
         private SettingsManager _settingsManager;
 
         // State & Data Containers
@@ -83,6 +84,13 @@ namespace AppDesign
         private List<Button> simon_gameTiles;
         private Label simon_playerTurnLabel;
         
+        // Solitaire
+        private VisualElement _solitaireGameScreen;
+        private Button _solitaireDeckButton;
+        private VisualElement _solitaireDiscardPile;
+        private List<Button> _solitaireFoundationPiles = new List<Button>();
+        private List<Button> _solitaireTableauPiles = new List<Button>();
+        
         // Settings
         private Slider _masterVolumeSlider, _backgroundVolumeSlider, _sfxVolumeSlider;
         private Label _masterVolumeLabel, _backgroundVolumeLabel, _sfxVolumeLabel;
@@ -129,7 +137,8 @@ namespace AppDesign
             _funFactManager = GetComponent<FunFactsManager>() ?? gameObject.AddComponent<FunFactsManager>();
             _drawingManager = GetComponent<DrawingManager>() ?? gameObject.AddComponent<DrawingManager>();
             _responseGameManager = GetComponent<ResponseGameManager>() ?? gameObject.AddComponent<ResponseGameManager>();
-            _simonGameManager = GetComponent<SimonGameManager>() ?? gameObject.AddComponent<SimonGameManager>();
+            _simonGameManager = GetComponent<SimonGameManager>() ?? gameObject.AddComponent<SimonGameManager>();    
+            _solitaireGameManager = GetComponent<SolitaireGameManager>() ?? gameObject.AddComponent<SolitaireGameManager>();
             _settingsManager = GetComponent<SettingsManager>() ?? gameObject.AddComponent<SettingsManager>();
             
 
@@ -250,6 +259,16 @@ namespace AppDesign
             _simonGameManager.SetGameElements(simon_gameBoard, simon_startButton, simon_gameTiles, simon_playerTurnLabel);
             #endregion
             
+            #region Solitaire
+            _solitaireGameScreen = root.Q<VisualElement>("solitaire-gameScreen");
+            _solitaireDeckButton = root.Q<Button>("solitaire-deck-button");
+            _solitaireDiscardPile = root.Q<VisualElement>("solitaire-discard-pile");
+            _solitaireFoundationPiles = root.Query<Button>("solitaire-foundation-piles").ToList();
+            _solitaireTableauPiles = root.Query<Button>("solitaire-tableau-piles").ToList();
+            _solitaireGameManager.SetUIElements(_solitaireGameScreen, _solitaireDeckButton, _solitaireDiscardPile,
+                _solitaireFoundationPiles, _solitaireTableauPiles, _wiggleEffect );
+            #endregion Solitaire
+            
             #region Settings
             _masterVolumeSlider = root.Q<Slider>("MasterVolumeSlider");
             _masterVolumeSlider.RegisterCallback<ChangeEvent<float>>(_settingsManager.OnMasterVolumeChanged);
@@ -365,6 +384,10 @@ namespace AppDesign
                 else if (selectedScreen.name == "Screen12") // Drawing Pad
                 {
                     _drawingManager.DrawingStart();
+                }
+                else if (selectedScreen.name == "Screen15") // Drawing Pad
+                {
+                    _solitaireGameManager.InitializeGame();
                 }
             }
             else if (screenName == "MainScreen" && _mainScreen != null)
